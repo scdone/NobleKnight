@@ -4,7 +4,121 @@
   align-items: center;
 }
 
+@font-face {
+  font-family: 'zig';
+  src: local('zig'), url(./fonts/zig_____.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: '8801';
+  src: local('8801'), url(./fonts/8801-DKnR.ttf) format('truetype');
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 2.5px 2.5px 7px #b7faab;
+  }
+  50% {
+    text-shadow: 2.5px 2.5px 12px #b7faab;
+  }
+  100% {
+    text-shadow: 2.5px 2.5px 7px #b7faab;
+  }
+}
+
+@keyframes boxGlow {
+  0% {
+    box-shadow: 0px 0px 12px #b7faab;
+  }
+  50% {
+    box-shadow: 0px 0px 20px #b7faab;
+  }
+  100% {
+    box-shadow: 0px 0px 12px #b7faab;
+  }
+}
+
+@keyframes typing {
+  from { width: 0; opacity: 100% }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #39FF14; }
+}
+
+header {
+  color: #39FF14;
+  font-size: 36px;
+  font-family: 'zig', serif;
+  letter-spacing: 10px;
+}
+
+.welcome-box {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  border: 5px dotted #39FF14;
+  margin: 10px;
+  padding: 10px;
+  justify-content: space-evenly;
+  height: 62vh;
+  width: 80vw;
+  letter-spacing: 3px;
+}
+
+.h1 {
+  font-size: 28px;
+  font-family: 'zig', serif;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 3px solid #39FF14; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 2px; /* Adjust as needed */
+  animation: 
+    typing 4.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+#h1-2 {
+  opacity: 0%;
+  animation: 
+  typing 5s steps(40, end),
+  blink-caret .75s step-end infinite;
+  animation-delay: 4.6s;
+}
+
+.author-tagline {
+  font-size: 12px;
+  font-family: 'zig', serif;
+}
+
+.title {
+  animation-name: glow;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
 .app {
   background-color: black;
   color: #39FF14;
+  height: 100vh;
+}
+
+button {
+  width: 160px;
+  height: 60px;
+  font-family: 'zig', serif;
+  font-size: 20px;
+  background-color: #39FF14;
+  font-weight: bolder;
+  margin: 10px;
+  border: none;
+  animation-name: boxGlow;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
 }
