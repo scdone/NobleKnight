@@ -1,3 +1,5 @@
+const allEvents = []
+
 const firstEvent = [
     {
         id: 0,
