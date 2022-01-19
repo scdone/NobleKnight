@@ -171,7 +171,7 @@ h2 {
 .login-form {
   padding-left: 50px;
   padding-right: 130px;
-  padding-top: 100px;
+  padding-top: 55px;
 }
 
 #login-submit-button {
@@ -179,7 +179,8 @@ h2 {
   color: black;
   font-family: 'zig',serif;
   padding: 10px;
-  margin-top: 40px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   border: none;
   animation-name: boxGlow;
   animation-duration: 2s;
@@ -198,4 +199,10 @@ label {
   padding: 20px;
 }
 
+#create-acct-link {
+  color: #39FF14;
+  font-size: 12px;
+  font-family: '8801', serif;
+  letter-spacing: 1px;
+}
 /*//////LOGIN PAGE SPECIFIC STYLING////*/

@@ -1,9 +1,11 @@
+import React from "react"
+import { Link } from 'react-router-dom'
+
 function Login() {
 
     return (
-        <div class="row">
         <section className='login-section'>
-                <div class="login-form column">
+                <div class="login-form column1">
                     <h2>Login</h2>
                 <form className="user-login">
                     <label for="username"><b>username</b></label>
@@ -16,14 +18,14 @@ function Login() {
                     <br/>
                     <input type="submit" id="login-submit-button"/>
                     <br/>
+                    <Link to='/createaccount' id="create-acct-link">don't have an account? <br/> create one here</Link>
                 </form>
                 </div>
-                <div className="play-as-guest column">
+                <div className="play-as-guest column2">
                     <h2 className="play-guest">Play as Guest</h2>
                     <button className="enter-welcome-btn">ENTER</button>
                 </div>
         </section>
-        </div>
 
     )
 }
