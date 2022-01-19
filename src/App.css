@@ -352,7 +352,6 @@ label {
 
 }
 
-
 #doors-img {
   justify-self: center;
   margin-top: 40px;
@@ -367,3 +366,66 @@ label {
 }
 
 /*/////// GET PLAYER NAME PAGE STYLING ////////*/
+
+/*/////// GAME OVER ////////*/
+
+#game-over-imgs {
+  display: flex;
+  justify-content: center;
+}
+
+#coffin-img {
+  height: 150px;
+  width: 150px;
+}
+
+#gameover-img {
+  height: 150px;
+  width: 250px;
+}
+
+#end-game-div {
+  font-size: 14px;
+  font-family: '8801',serif;
+  letter-spacing: 2px;
+  justify-content: center;
+  text-align: center;
+}
+
+#end-game-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+#save-and-quit-btn {
+  font-size: 16px;
+}
+
+#save-and-play-again-btn {
+  font-size: 16px;
+}
+
+#end-game-columns {
+  display: flex;
+  text-align: center;
+  justify-items: center;
+  justify-content: space-evenly;
+}
+
+#end-game-left-col {
+  width: 50%
+}
+
+#end-game-right-col {
+  flex: 1;
+  border: 1px dashed #39FF14;
+  margin-left: 50px;
+  font-family: '8801', serif;
+  border-bottom: 1px dashed #39FF14;
+  margin-left: 20px;
+  text-align: center;
+  font-size: 16px;
+  
+}
+
+/*/////// GAME OVER ////////*/
