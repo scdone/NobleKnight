@@ -301,6 +301,22 @@ label {
   font-size: 24px;
   font-family: '8801', serif;
   letter-spacing: 1px;
-  padding: 50px;
   text-align: left;
 }
+
+#most-recent-game {
+  margin-left: 80px;
+  border-bottom: 1px dashed #39FF14;
+}
+
+#next-recent-game {
+  margin-left: 80px;
+  border-bottom: 1px dashed #39FF14;
+}
+
+#third-recent-game {
+  margin-left: 80px;
+  border-bottom: 1px dashed #39FF14;
+}
+
+/*/////// PLAYER HISTORY PAGE STYLING ////////*/
