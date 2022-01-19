@@ -76,6 +76,11 @@ button {
   50% { border-color: #39FF14; }
 }
 
+@keyframes load-in {
+  0% { opacity: 0%;}
+  100% { opacity: 100% }
+}
+
 /*////////// ANIMATIONS ////////////*/
 
 
@@ -320,3 +325,45 @@ label {
 }
 
 /*/////// PLAYER HISTORY PAGE STYLING ////////*/
+
+/*/////// GET PLAYER NAME PAGE STYLING ////////*/
+
+#nameth {
+  font-size: 30px;
+  font-family: 'zig', serif;
+  text-align: center;
+}
+
+#nameth-door-img-div {
+  display: grid;
+  justify-content: center;
+}
+
+#get-player-name-form{
+  display: grid;
+  justify-content: center;
+
+}
+
+#get-name-input{
+  border-left: 3px solid #39FF14;
+  margin-right: 30px;
+  animation: blink-caret 1s step-end 4;
+
+}
+
+
+#doors-img {
+  justify-self: center;
+  margin-top: 40px;
+  margin-bottom: 40px;;
+  height: 150px;
+  width: 240px;
+  overflow: hidden;
+  animation: load-in;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+  animation-timing-function: steps(100);
+}
+
+/*/////// GET PLAYER NAME PAGE STYLING ////////*/
