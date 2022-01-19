@@ -1,9 +1,34 @@
+/*/////    .APP AND OVERALL STYLING ///////////*/
 .flex-col-center {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.app {
+  background-color: black;
+  color: #39FF14;
+  height: 100vh;
+}
+
+button {
+  width: 160px;
+  height: 60px;
+  font-family: 'zig', serif;
+  font-size: 20px;
+  background-color: #39FF14;
+  font-weight: bolder;
+  margin: 10px;
+  border: none;
+  animation-name: boxGlow;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+/*/////    .APP AND OVERALL STYLING ///////////*/
+
+/*////////// FONT STYLES ////////////*/
 @font-face {
   font-family: 'zig';
   src: local('zig'), url(./fonts/zig_____.ttf) format('truetype');
@@ -13,7 +38,10 @@
   font-family: '8801';
   src: local('8801'), url(./fonts/8801-DKnR.ttf) format('truetype');
 }
+/*////////// FONT STYLES ////////////*/
 
+
+/*////////// ANIMATIONS ////////////*/
 @keyframes glow {
   0% {
     text-shadow: 2.5px 2.5px 7px #b7faab;
@@ -47,6 +75,11 @@
   from, to { border-color: transparent }
   50% { border-color: #39FF14; }
 }
+
+/*////////// ANIMATIONS ////////////*/
+
+
+/*///////////  HEADER AND WELCOME PAGE STYLING ////////*/
 
 header {
   color: #39FF14;
@@ -103,26 +136,7 @@ header {
 }
 
 
-.app {
-  background-color: black;
-  color: #39FF14;
-  height: 100vh;
-}
-
-button {
-  width: 160px;
-  height: 60px;
-  font-family: 'zig', serif;
-  font-size: 20px;
-  background-color: #39FF14;
-  font-weight: bolder;
-  margin: 10px;
-  border: none;
-  animation-name: boxGlow;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-}
+/*///////////  HEADER AND WELCOME PAGE STYLING ////////*/
 
 /*//////LOGIN PAGE SPECIFIC STYLING////*/
 
