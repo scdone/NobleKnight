@@ -1,14 +1,10 @@
-import Header from './Header'
-
 function YouWin() {
 
     return (
-        <div>
-        <Header />
+
         <section className='you-win-section'>
             <h1>Yay you won!</h1>
         </section>
-        </div>
     )
 }
 
