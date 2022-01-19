@@ -2,9 +2,33 @@ function YouWin() {
 
     return (
 
-        <section className='you-win-section'>
-            <h1>Yay you won!</h1>
-        </section>
+    <section className='youwin-section'>
+        <h1 className='h1'>Huzzah, Noble knight! You have won!</h1>
+            
+            <div id="you-win-imgs">
+    
+            </div>
+            <container id="end-game-columns">
+            <div id="end-game-left-col">   
+            <div id="end-game-div">
+                <h1>Ending Score: 500</h1>
+                <h1>Ranking: 6</h1>
+            </div>
+            <div id="end-game-buttons">
+                <button id="save-and-quit-btn">Save and Quit</button>
+                <button id="save-and-play-again-btn">Save and Play Again</button>
+            </div>
+            </div>
+            <div id="end-game-right-col">
+                <h1 id="leaderboard-title">Leaderboard</h1>
+                <p>1. player // score: 1000</p>
+                <p>2. player // score: 900</p>
+                <p>3. player // score: 800</p>
+                <p>4. player // score: 700</p>
+                <p>5. player // score: 600</p>
+            </div>
+            </container>
+    </section>
     )
 }
 
