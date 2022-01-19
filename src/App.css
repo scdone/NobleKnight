@@ -53,8 +53,15 @@ header {
   font-size: 36px;
   font-family: 'zig', serif;
   letter-spacing: 10px;
+  background-color: black;
 }
 
+.title {
+  animation-name: glow;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
 .welcome-box {
   display: flex;
   align-items: center;
@@ -95,12 +102,6 @@ header {
   font-family: 'zig', serif;
 }
 
-.title {
-  animation-name: glow;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-}
 
 .app {
   background-color: black;
