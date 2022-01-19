@@ -123,3 +123,65 @@ button {
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
 }
+
+/*//////LOGIN PAGE SPECIFIC STYLING////*/
+
+.login-section {
+  display: flex;
+  text-align: center;
+  justify-items: center;
+  justify-content: space-evenly;
+}
+
+.column1 {
+  width: 50%
+}
+
+.column2 {
+  flex: 1;
+}
+
+h2 {
+  font-family: 'zig', serif;
+  color: #39FF14;
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+.play-as-guest {
+  border-left: 3px solid #39FF14;
+  padding-left: 130px;
+  padding-top: 100px
+}
+
+.login-form {
+  padding-left: 50px;
+  padding-right: 130px;
+  padding-top: 100px;
+}
+
+#login-submit-button {
+  background-color: #39FF14;
+  color: black;
+  font-family: 'zig',serif;
+  padding: 10px;
+  margin-top: 40px;
+  border: none;
+  animation-name: boxGlow;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+input[type=text] {
+  background-color: black;
+  
+}
+
+label {
+  font-family: '8801', serif;
+  letter-spacing: 2px;
+  padding: 20px;
+}
+
+/*//////LOGIN PAGE SPECIFIC STYLING////*/
