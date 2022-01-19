@@ -1,6 +1,6 @@
 
 import './App.css';
-import { BrowserRouter, Route, Switch, render } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, render, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Welcome from './components/Welcome';
 import Login from './components/Login';
@@ -24,14 +24,21 @@ function enterGame(e) {
 function App() { 
   return (
     <div className="app flex-col-center">
-    <Header />
-     <main>
+      <header>
+        <h1 className="title">Noble Knight</h1>
+        </header>
        <BrowserRouter>
-        <switch>
-            <Welcome />
-        </switch>
+        <Routes>
+          <Route path="/" element={<Welcome />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/playerhistory" element={<PlayerHistory />} />
+          <Route path="/createaccount" element={<CreateAccount />} />
+          <Route path="/getname" element={<GetPlayerName />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/gameover" element={<GameOver />} />
+          <Route path="/youwin" element={<YouWin />} />
+        </Routes>
       </BrowserRouter>
-    </main>
    </div>
    );
 }
