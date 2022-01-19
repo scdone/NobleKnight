@@ -1,6 +1,6 @@
 import Header from './Header'
 
-function getPlayerName() {
+function GetPlayerName() {
 
     return (
         <div>
@@ -12,4 +12,4 @@ function getPlayerName() {
     )
 }
 
-export default getPlayerName
+export default GetPlayerName

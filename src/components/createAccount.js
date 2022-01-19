@@ -1,6 +1,6 @@
 import Header from './Header'
 
-function createAccount() {
+function CreateAccount() {
 
     return (
         <div>
@@ -12,4 +12,4 @@ function createAccount() {
     )
 }
 
-export default createAccount
+export default CreateAccount

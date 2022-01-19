@@ -1,6 +1,6 @@
 import Header from './Header'
 
-function gameOver() {
+function GameOver() {
 
     return (
         <div>
@@ -12,4 +12,4 @@ function gameOver() {
     )
 }
 
-export default gameOver
+export default GameOver

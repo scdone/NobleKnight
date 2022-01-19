@@ -1,6 +1,6 @@
 import Header from './Header'
 
-function playerHistory() {
+function PlayerHistory() {
 
     return (
         <div>
@@ -12,4 +12,4 @@ function playerHistory() {
     )
 }
 
-export default playerHistory
+export default PlayerHistory

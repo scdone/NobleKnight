@@ -1,6 +1,6 @@
 import Header from './Header'
 
-function youWin() {
+function YouWin() {
 
     return (
         <div>
@@ -12,4 +12,4 @@ function youWin() {
     )
 }
 
-export default youWin
+export default YouWin

@@ -6,6 +6,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Welcome from './components/Welcome';
 import Login from './components/Login';
+import CreateAccount from './components/CreateAccount';
+import PlayerHistory from './components/PlayerHistory';
+import GetPlayerName from './components/GetPlayerName';
+import Events from './components/Events';
+import GameOver from './components/GameOver';
+import YouWin from './components/YouWin';
 
 ReactDOM.render(
   <BrowserRouter>
