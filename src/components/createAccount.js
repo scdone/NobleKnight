@@ -2,7 +2,41 @@ function CreateAccount() {
 
     return (
         <section className='create-account-section'>
-            <h1>This is my create account page</h1>
+            <div id="create-account-div">
+                <h1 id="create-account-title">create an account</h1>
+            </div>
+        <container className='create-account-container'>
+            <div id="sword-div-left">
+                <img id="sword-img-left" src={require('../fonts/nobleKnight-sword-left.png')} />
+            </div>
+            <br/>
+            <div id="create-account-div">
+                <form id="create-account-form">
+                    <label>
+                        create username
+                        <br/>
+                    <input type="text" id="create-username-input" />
+                    </label>
+                    <br/>
+                    <label>
+                        create password
+                        <br/>
+                    <input type="text" id="create-password-input" />
+                    </label>
+                    <br/>
+                    <label>
+                        confirm password
+                        <br/>
+                    <input type="text" id="confirm-password-input" />
+                    </label>
+                    <br/>
+                    <input type="submit" id="submit-create-account"></input>
+                </form>
+            </div>
+            <div id="sword-div-right">
+                <img id="sword-img-right" src={require('../fonts/noble-sword-right-png.png')} />
+            </div>
+            </container>
         </section>
     )
 }

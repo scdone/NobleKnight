@@ -206,3 +206,69 @@ label {
   letter-spacing: 1px;
 }
 /*//////LOGIN PAGE SPECIFIC STYLING////*/
+
+/*////// CREATE ACCOUNT PAGE STYLING ///////*/
+
+#sword-img-left {
+  width: 200px;
+  height: 200px;
+}
+
+#sword-img-right {
+  width: 200px;
+  height: 200px;
+}
+
+.create-account-container {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#sword-div-left {
+  display: flex;
+  margin-right: 60px;
+}
+#create-account-div {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-size: 20px;
+}
+#sword-div-right {
+  display: flex;
+  margin-left: 60px;
+}
+
+#create-account-title {
+  font-size: 36px;
+  font-family: 'zig', serif;
+  letter-spacing: 2px;
+}
+
+#submit-create-account {
+  background-color: #39FF14;
+  color: black;
+  font-family: 'zig',serif;
+  padding: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: none;
+  animation-name: boxGlow;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+#create-username-input {
+  margin-left: 36px;
+}
+#create-password-input {
+  margin-left: 36px;
+}
+#confirm-password-input {
+  margin-left: 36px;
+}
