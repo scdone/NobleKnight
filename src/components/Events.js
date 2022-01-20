@@ -1,9 +1,9 @@
 function Events(props) {
     return (
         <section className="event-section flex-col-center">
-            <p>{props.allEvents.eventText}</p>
-            <form className="form-input" onSubmit={props.checkAnswer}>
-                <input className="input-field" type="text" value={props.userInput} onSubmit={props.handleInput}/>
+            <p>Event Text Goes Here</p>
+            <form className="form-input">
+                <input type="text" id="choice-input"/>
             </form>
         </section>
     )

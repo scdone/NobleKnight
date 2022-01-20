@@ -1,4 +1,12 @@
+import { useNavigate } from 'react-router-dom'
+
 function GetPlayerName() {
+
+    let navigate = useNavigate()
+
+    const handleGetNameSubmit = () => {
+         navigate('/events')
+    }
 
     return (
         <section className='get-player-name-section'>
@@ -6,7 +14,7 @@ function GetPlayerName() {
             <h1 id="nameth">Halt! Before we go further... <br/>What is thy nameth?</h1>
             <img id="doors-img" src={require('../fonts/doors.png')} />
             </div> 
-            <form id="get-player-name-form">
+            <form id="get-player-name-form" onSubmit={handleGetNameSubmit}>
                 <input type="text" id="get-name-input" name="playerName"/>
             </form>
         </section>

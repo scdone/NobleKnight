@@ -1,4 +1,20 @@
+import { useNavigate } from 'react-router-dom'
+
+
 function YouWin() {
+
+    let navigate = useNavigate();
+
+    const handleClickplay = () => {
+      navigate('/getname')
+    }
+  
+    const handleClickQuit = () => {
+        navigate('/')
+    }
+
+
+
 
     return (
 
@@ -15,8 +31,8 @@ function YouWin() {
                 <h1>Ranking: 6</h1>
             </div>
             <div id="end-game-buttons">
-                <button id="save-and-quit-btn">Save and Quit</button>
-                <button id="save-and-play-again-btn">Save and Play Again</button>
+                <button id="save-and-quit-btn" onClick={handleClickQuit}>Save and Quit</button>
+                <button id="save-and-play-again-btn" onClick={handleClickplay}>Save and Play Again</button>
             </div>
             </div>
             <div id="end-game-right-col">

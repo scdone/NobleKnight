@@ -26,6 +26,10 @@ button {
   animation-timing-function: ease-in-out;
 }
 
+input {
+  color: #39FF14;
+}
+
 /*/////    .APP AND OVERALL STYLING ///////////*/
 
 /*////////// FONT STYLES ////////////*/
