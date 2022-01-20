@@ -1,7 +1,17 @@
 import React from "react"
-import { Link } from 'react-router-dom'
+import { Link , useNavigate } from 'react-router-dom'
 
 function Login() {
+
+    let navigate = useNavigate()
+
+    const handleClickAsGuest = () => {
+        navigate('/getname')
+    }
+
+    const handleUserLogin = () => {
+        navigate('/playerhistory')
+    }
 
     return (
         <section className='login-section'>
@@ -16,14 +26,14 @@ function Login() {
                     <br/>
                     <input type="text" placeholder="enter password" name="passw" id="password-input" required />
                     <br/>
-                    <input type="submit" id="login-submit-button"/>
+                    <input type="submit" id="login-submit-button" onClick={handleUserLogin}/>
                     <br/>
                     <Link to='/createaccount' id="create-acct-link">don't have an account? <br/> create one here</Link>
                 </form>
                 </div>
                 <div className="play-as-guest column2">
                     <h2 className="play-guest">Play as Guest</h2>
-                    <button className="enter-welcome-btn">ENTER</button>
+                    <button className="enter-welcome-btn" onClick={handleClickAsGuest}>ENTER</button>
                 </div>
         </section>
 
