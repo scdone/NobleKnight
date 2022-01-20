@@ -7,9 +7,9 @@ import { useNavigate } from "react-router-dom";
 function GameOver() {
 
   let navigate = useNavigate();
-  
+
   const handleClickplay = () => {
-    navigate('/')
+    navigate('/getname')
   }
 
     return (
