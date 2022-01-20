@@ -1,4 +1,15 @@
+import { useNavigate } from 'react-router-dom'
+
+
+
 function CreateAccount() {
+
+    let navigate = useNavigate()
+
+    const handleCreateAccountSubmit = () => {
+
+        navigate('/playerhistory')
+    }
 
     return (
         <section className='create-account-section'>
@@ -11,7 +22,7 @@ function CreateAccount() {
             </div>
             <br/>
             <div id="create-account-div">
-                <form id="create-account-form">
+                <form id="create-account-form" onSubmit={handleCreateAccountSubmit}>
                     <label>
                         create username
                         <br/>
