@@ -1,4 +1,16 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
+
+
+
+
 function GameOver() {
+
+  let navigate = useNavigate();
+  
+  const handleClickplay = () => {
+    navigate('/')
+  }
 
     return (
 
@@ -17,7 +29,7 @@ function GameOver() {
         </div>
         <div id="end-game-buttons">
             <button id="save-and-quit-btn">Save and Quit</button>
-            <button id="save-and-play-again-btn">Save and Play Again</button>
+            <button id="save-and-play-again-btn" onClick={handleClickplay}>Save and Play Again</button>
         </div>
         </div>
         <div id="end-game-right-col">
