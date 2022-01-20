@@ -12,6 +12,10 @@ function GameOver() {
     navigate('/getname')
   }
 
+  const handleClickQuit = () => {
+      navigate('/')
+  }
+
     return (
 
         <section className='game-over-section'>
@@ -28,7 +32,7 @@ function GameOver() {
             <h1>Ranking: 0</h1>
         </div>
         <div id="end-game-buttons">
-            <button id="save-and-quit-btn">Save and Quit</button>
+            <button id="save-and-quit-btn" onClick={handleClickQuit}>Save and Quit</button>
             <button id="save-and-play-again-btn" onClick={handleClickplay}>Save and Play Again</button>
         </div>
         </div>
