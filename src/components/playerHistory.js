@@ -1,4 +1,14 @@
+import { useNavigate } from 'react-router-dom'
+
+
+
 function PlayerHistory() {
+
+    let navigate = useNavigate()
+
+    const handleNewGameButton = () => {
+        navigate("/getname")
+    }
 
     return (
 
@@ -12,7 +22,7 @@ function PlayerHistory() {
                 <div id="third-recent-game">Date: 1/01/2022 / KnightName: Heathen / Score: -7 / Ranking:69</div>
                 <br/>
             </container>
-            <button id="start-new-game-button">Start New Game</button>
+            <button id="start-new-game-button" onClick={handleNewGameButton}>Start New Game</button>
         </section>
 
     )
