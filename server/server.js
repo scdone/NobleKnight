@@ -1,18 +1,25 @@
 const express = require('express')
-const cors = require('cors')
-
 const app = express()
+const cors = require('cors')
+require('dotenv').config()
+
+const { SERVER_PORT } = process.env
+
 
 const ctrl = require('./controller')
 
-app.use(express.json)
+app.use(express.json())
 app.use(cors())
 
 
+app.get('/', (req, res) => {
+    res.send('Hello World!!!');
+  });
 
 
 
 
 
 
-app.listen(4000, () => console.log('up on 4000'))
+
+app.listen(SERVER_PORT, () => console.log(`listening on ${SERVER_PORT}`))
