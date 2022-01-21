@@ -8,6 +8,7 @@ const { SERVER_PORT } = process.env
 
 const ctrl = require('./controller')
 
+
 app.use(express.json())
 app.use(cors())
 
@@ -16,8 +17,11 @@ app.get('/', (req, res) => {
     res.send('Hello World!!!');
   });
 
+app.get('/allEvents', ctrl.getAllEvents)
 
 
+
+// app.get('/allUsers', ctrl.getAllUsers) -- this was a test
 
 
 
