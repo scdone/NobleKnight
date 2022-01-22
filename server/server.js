@@ -18,8 +18,10 @@ app.get('/', (req, res) => {
   });
 
 app.get('/allEvents', ctrl.getAllEvents)
+app.get('/api/playerHistory/:id', ctrl.getPlayerHistory)
+app.get('/api/leaderboard', ctrl.getLeaderboard)
 
-
+app.post('/api/saveGame', ctrl.saveGame)
 
 // app.get('/allUsers', ctrl.getAllUsers) -- this was a test
 
