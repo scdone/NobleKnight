@@ -1,13 +1,27 @@
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 function GetPlayerName(props) {
 
     let navigate = useNavigate()
 
-    const handleGetNameSubmit = (e) => {
+    function getEventsFront() {
+        axios.get('/allEvents')
+            .then((res) => {
+                props.setEvents(res.data)
+                navigate('/events')
+            })
+    }
+
+    function getName(e) {
+        // console.log(e.target.value)
+        // console.log(props.playerName)
+        props.setPlayerName(e.target.value)
+    }
+
+    function handleGetNameSubmit(e) { 
          e.preventDefault()
-         props.getEventsFront()
-         navigate('/events')
+         getEventsFront()
     }
 
     return (
@@ -17,7 +31,7 @@ function GetPlayerName(props) {
             <img id="doors-img" src={require('../fonts/doors.png')} />
             </div> 
             <form id="get-player-name-form" onSubmit={handleGetNameSubmit}>
-                <input type="text" id="get-name-input" name="playerName"/>
+                <input onChange={getName} type="text" id="get-name-input" name="playerName"/>
             </form>
         </section>
     )

@@ -6,7 +6,7 @@ const firstEvent = [
     {
         id: 0,
         eventName: `welcome`,
-        eventText: `Huzzah, Noble ________ Welcome to ye kingdom!  
+        eventText: `  
         For seven years ye have pined for the beautiful Princess Wren's hand in marriage. Her father, King Bloodworth III, has sent a declaration throughout the land for all knights to compete to win his blessing. 
         The first knight to bring the ancient Almighty Claymore of Justice back to the King will win the heart and hand of Princess Wren forever. 
         Legend has it the ancient Claymore is hidden in the Monstrous Caverns past the depths of the Deadhaze forest. Danger and Mystery abound...

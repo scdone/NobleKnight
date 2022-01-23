@@ -1,7 +1,8 @@
 import { useNavigate } from 'react-router-dom'
 
 
-function YouWin() {
+function YouWin(props) {
+    console.log(123, props)
 
     let navigate = useNavigate();
 
@@ -13,13 +14,10 @@ function YouWin() {
         navigate('/')
     }
 
-
-
-
     return (
 
     <section className='youwin-section'>
-        <h1 className='h1'>Huzzah, Noble knight! You have won!</h1>
+        <h1 className='h1'>Huzzah, {props.playerName}! You have won!</h1>
             
             <div id="you-win-imgs">
     
@@ -27,8 +25,7 @@ function YouWin() {
             <div id="end-game-columns">
             <div id="end-game-left-col">   
             <div id="end-game-div">
-                <h1>Ending Score: 500</h1>
-                <h1>Ranking: 6</h1>
+                <h1>Ending Score: {props.score}</h1>
             </div>
             <div id="end-game-buttons">
                 <button id="save-and-quit-btn" onClick={handleClickQuit}>Save and Quit</button>

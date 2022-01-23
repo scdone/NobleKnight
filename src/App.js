@@ -9,6 +9,7 @@ import GetPlayerName from './components/GetPlayerName';
 import Events from './components/Events';
 import GameOver from './components/GameOver';
 import YouWin from './components/YouWin';
+import Choices from './components/Choices';
 
 import { useState } from 'react'; 
 
@@ -24,14 +25,13 @@ function enterGame(e) {
 
 function App() {
   const [events, setEvents] = useState([])
-  
-  function getEventsFront(e) {
-    e.preventDefault()
-    axios.get('/allEvents')
-        .then((res) => {
-            setEvents(res.data)
-        })
-}
+  const [index, setIndex] = useState(0)
+  const [score, setScore] = useState(0)
+  const [userInput, setUserInput] = useState('')
+  const [playerName, setPlayerName] = useState('')
+
+
+
 
 
   return (
@@ -45,10 +45,11 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/playerhistory" element={<PlayerHistory />} />
           <Route path="/createaccount" element={<CreateAccount />} />
-          <Route path="/getname" element={<GetPlayerName getEventsFront={getEventsFront}/>} />
-          <Route path="/events" element={<Events events={events}/>} />
-          <Route path="/gameover" element={<GameOver />} />
-          <Route path="/youwin" element={<YouWin />} />
+          <Route path="/getname" element={<GetPlayerName setEvents={setEvents} playerName={playerName} setPlayerName={setPlayerName}  />} />
+          <Route path="/events" element={<Events events={events} index={index}setIndex={setIndex} userInput={userInput} setUserInput={setUserInput} playerName={playerName}/>} />
+          <Route path="/choices" element={<Choices events={events} index={index} setIndex={setIndex} score={score} setScore={setScore} userInput={userInput} setUserInput={setUserInput} />} />
+          <Route path="/gameover" element={<GameOver score={score}/>} />
+          <Route path="/youwin" element={<YouWin score={score} playerName={playerName} />} />
         </Routes>
       </BrowserRouter>
    </div>

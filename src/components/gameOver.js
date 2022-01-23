@@ -1,10 +1,11 @@
+
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
 
 
 
-function GameOver() {
+function GameOver(props) {
 
   let navigate = useNavigate();
 
@@ -28,8 +29,7 @@ function GameOver() {
         <div id="end-game-columns">
         <div id="end-game-left-col">   
         <div id="end-game-div">
-            <h1>Ending Score: -100</h1>
-            <h1>Ranking: 0</h1>
+            <h1>Ending Score: {props.score} </h1>
         </div>
         <div id="end-game-buttons">
             <button id="save-and-quit-btn" onClick={handleClickQuit}>Save and Quit</button>
