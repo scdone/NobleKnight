@@ -25,7 +25,7 @@ function GameOver() {
         <img id="coffin-img" src={require('../fonts/coffin.png')} />
         <img id="gameover-img" src={require('../fonts/game-over.png')} />
         </div>
-        <container id="end-game-columns">
+        <div id="end-game-columns">
         <div id="end-game-left-col">   
         <div id="end-game-div">
             <h1>Ending Score: -100</h1>
@@ -44,7 +44,7 @@ function GameOver() {
             <p>4. player // score: 700</p>
             <p>5. player // score: 600</p>
         </div>
-        </container>
+        </div>
         </section>
     )
 }

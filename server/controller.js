@@ -27,9 +27,11 @@ module.exports = {
         }
         let randomEvents = randomizeEvents(events);
 
-        allEvents.push(firstEvent)
-        allEvents.push(randomEvents)
-        allEvents.push(lastEvents);
+        allEvents.push(firstEvent[0])
+        randomEvents.forEach((evt) => {
+            allEvents.push(evt)
+        })
+        allEvents.push(lastEvents[0], lastEvents[1]);
 
         res.status(200).send(allEvents)
         },

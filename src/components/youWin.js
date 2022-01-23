@@ -24,7 +24,7 @@ function YouWin() {
             <div id="you-win-imgs">
     
             </div>
-            <container id="end-game-columns">
+            <div id="end-game-columns">
             <div id="end-game-left-col">   
             <div id="end-game-div">
                 <h1>Ending Score: 500</h1>
@@ -43,7 +43,7 @@ function YouWin() {
                 <p>4. player // score: 700</p>
                 <p>5. player // score: 600</p>
             </div>
-            </container>
+            </div>
     </section>
     )
 }

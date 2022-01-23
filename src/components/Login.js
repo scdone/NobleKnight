@@ -15,14 +15,14 @@ function Login() {
 
     return (
         <section className='login-section'>
-                <div class="login-form column1">
+                <div className="login-form column1">
                     <h2>Login</h2>
                 <form className="user-login">
-                    <label for="username"><b>username</b></label>
+                    <label><b>username</b></label>
                     <br/>
                     <input type="text" placeholder="enter username" name="uname" id="username-input" required />
                     <br/>
-                    <label for="password"><b>password</b></label>
+                    <label><b>password</b></label>
                     <br/>
                     <input type="text" placeholder="enter password" name="passw" id="password-input" required />
                     <br/>

@@ -16,7 +16,7 @@ function CreateAccount() {
             <div id="create-account-div">
                 <h1 id="create-account-title">create an account</h1>
             </div>
-        <container className='create-account-container'>
+        <section className='create-account-container'>
             <div id="sword-div-left">
                 <img id="sword-img-left" src={require('../fonts/nobleKnight-sword-left.png')} />
             </div>
@@ -47,7 +47,7 @@ function CreateAccount() {
             <div id="sword-div-right">
                 <img id="sword-img-right" src={require('../fonts/noble-sword-right-png.png')} />
             </div>
-            </container>
+            </section>
         </section>
     )
 }

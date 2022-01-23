@@ -10,6 +10,8 @@ import Events from './components/Events';
 import GameOver from './components/GameOver';
 import YouWin from './components/YouWin';
 
+import { useState } from 'react'; 
+
 
 import axios from 'axios';
 
@@ -20,7 +22,18 @@ function enterGame(e) {
 }
 
 
-function App() { 
+function App() {
+  const [events, setEvents] = useState([])
+  
+  function getEventsFront(e) {
+    e.preventDefault()
+    axios.get('/allEvents')
+        .then((res) => {
+            setEvents(res.data)
+        })
+}
+
+
   return (
     <div className="app flex-col-center">
       <header>
@@ -32,8 +45,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/playerhistory" element={<PlayerHistory />} />
           <Route path="/createaccount" element={<CreateAccount />} />
-          <Route path="/getname" element={<GetPlayerName />} />
-          <Route path="/events" element={<Events />} />
+          <Route path="/getname" element={<GetPlayerName getEventsFront={getEventsFront}/>} />
+          <Route path="/events" element={<Events events={events}/>} />
           <Route path="/gameover" element={<GameOver />} />
           <Route path="/youwin" element={<YouWin />} />
         </Routes>

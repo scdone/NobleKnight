@@ -28,6 +28,8 @@ button {
 
 input {
   color: #39FF14;
+  border: none;
+  border-bottom: 2px solid #39FF14;
 }
 
 /*/////    .APP AND OVERALL STYLING ///////////*/

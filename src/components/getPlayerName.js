@@ -1,10 +1,12 @@
 import { useNavigate } from 'react-router-dom'
 
-function GetPlayerName() {
+function GetPlayerName(props) {
 
     let navigate = useNavigate()
 
-    const handleGetNameSubmit = () => {
+    const handleGetNameSubmit = (e) => {
+         e.preventDefault()
+         props.getEventsFront()
          navigate('/events')
     }
 
