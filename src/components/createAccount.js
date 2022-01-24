@@ -1,14 +1,46 @@
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import { useState } from 'react'
 
 
-
-function CreateAccount() {
-
+function CreateAccount(props) {
     let navigate = useNavigate()
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+    const [confirm, setConfirm] = useState('')
 
-    const handleCreateAccountSubmit = () => {
+    function handleUsername(e) {
+        setUsername(e.target.value)
+    }
 
-        navigate('/playerhistory')
+    function handlePassword(e) {
+        setPassword(e.target.value)
+    }
+
+    function handleConfirm(e) {
+        setConfirm(e.target.value)
+    }
+
+    function handleCreateAccountFront(e) {
+        e.preventDefault()
+
+        if(password !== confirm) {
+            alert('passwords must match')
+            setPassword('')
+            setConfirm('')
+        } else {
+            props.setLoading(true)
+            const body = {
+                username: username,
+                password: password
+            }
+            axios.post('/auth/createAccount', body)
+                .then((res) => {
+                    props.setUser(res.data)
+                    props.setLoading(false)
+                })
+            navigate('/playerhistory')
+            }
     }
 
     return (
@@ -22,23 +54,23 @@ function CreateAccount() {
             </div>
             <br/>
             <div id="create-account-div">
-                <form id="create-account-form" onSubmit={handleCreateAccountSubmit}>
+                <form id="create-account-form" onSubmit={handleCreateAccountFront}>
                     <label>
                         create username
                         <br/>
-                    <input type="text" id="create-username-input" />
+                    <input type="text" id="create-username-input" onChange={handleUsername} />
                     </label>
                     <br/>
                     <label>
                         create password
                         <br/>
-                    <input type="text" id="create-password-input" />
+                    <input type="password" id="create-password-input" onChange={handlePassword}/>
                     </label>
                     <br/>
                     <label>
                         confirm password
                         <br/>
-                    <input type="text" id="confirm-password-input" />
+                    <input type="password" id="confirm-password-input" onChange={handleConfirm} />
                     </label>
                     <br/>
                     <input type="submit" id="submit-create-account"></input>

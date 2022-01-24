@@ -6,7 +6,7 @@ function Welcome() {
     let navigate = useNavigate()
 
     const handleClickEnterGame =  () => {
-        navigate('youwin')
+        navigate('login')
     }
 
     return (

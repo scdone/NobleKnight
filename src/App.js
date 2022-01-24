@@ -1,6 +1,5 @@
 import './App.css';
-import { BrowserRouter, Route, Switch, render, Routes } from 'react-router-dom';
-import Header from './components/Header';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Welcome from './components/Welcome';
 import Login from './components/Login';
 import CreateAccount from './components/CreateAccount';
@@ -30,6 +29,8 @@ function App() {
   const [userInput, setUserInput] = useState('')
   const [playerName, setPlayerName] = useState('')
   const [leaderboard, setLeaderboard] = useState('')
+  const [user, setUser] = useState(null)
+  const [loading, setLoading] = useState(false) 
 
   function getLeaderboardFront() {
     axios.get('/api/leaderboard')
@@ -41,9 +42,17 @@ function App() {
   useEffect(()=>{getLeaderboardFront()}, [])
 
 
+  if(loading) {
+    return(
+      <div className="app flex-col-center">
+      <header>
+        <h1 className="title">Noble Knight</h1>
+        </header>
+        <h1 className='h1'>loading . . . . </h1>
+      </div>
 
-
-
+    )
+  } else {
   return (
     <div className="app flex-col-center">
       <header>
@@ -52,9 +61,9 @@ function App() {
        <BrowserRouter>
         <Routes>
           <Route path="/" element={<Welcome />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/playerhistory" element={<PlayerHistory />} />
-          <Route path="/createaccount" element={<CreateAccount />} />
+          <Route path="/login" element={<Login setUser={setUser} loading={loading} setLoading={setLoading}/>} />
+          <Route path="/playerhistory" element={<PlayerHistory user={user} setUser={setUser} loading={loading} setLoading={setLoading}/>} />
+          <Route path="/createaccount" element={<CreateAccount setUser={setUser} loading={loading} setLoading={setLoading} />} />
           <Route path="/getname" element={<GetPlayerName setEvents={setEvents} playerName={playerName} setPlayerName={setPlayerName}  />} />
           <Route path="/events" element={<Events events={events} index={index}setIndex={setIndex} userInput={userInput} setUserInput={setUserInput} playerName={playerName}/>} />
           <Route path="/choices" element={<Choices events={events} index={index} setIndex={setIndex} score={score} setScore={setScore} userInput={userInput} setUserInput={setUserInput} />} />
@@ -64,6 +73,7 @@ function App() {
       </BrowserRouter>
    </div>
    );
+  }
 }
 
 export default App;
