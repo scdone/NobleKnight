@@ -31,6 +31,10 @@ input {
   border: none;
   border-bottom: 2px solid #39FF14;
   background-color: black;
+  height: 50px;
+  font-size: 16px;
+  font-family: 'zig', serif;
+  letter-spacing: 1px;
 }
 
 /*/////    .APP AND OVERALL STYLING ///////////*/
@@ -435,6 +439,7 @@ label {
   font-size: 24px;
   text-align: left;
   line-height: 1.5;
+  width: 800px;
   overflow: hidden;
   animation: load-in;
   animation-duration: 5s;

@@ -42,7 +42,7 @@ if(userChoice === firstEventChoice.choiceName){
         <section className="event-section flex-col-center">
             <p className='event-text'>{firstEventChoice.choiceText}</p>
             <form onSubmit={nextEventFirstChoice}>
-            <input type="text"/>
+            <input type="text" placeholder='press enter'/>
             </form>
         </section>
         </div>
@@ -54,7 +54,7 @@ else if(userChoice === secondEventChoice.choiceName){
         <section className="event-section flex-col-center">
             <p className='event-text'>{secondEventChoice.choiceText}</p>
             <form onSubmit={nextEventSecondChoice}>
-            <input type="text"/>
+            <input type="text" placeholder='press enter'/>
             </form>
         </section>
         </div>

@@ -32,7 +32,7 @@ function Events(props) {
             <h1 className="h1">Huzzah, {props.playerName}! Welcome to ye kingdom!</h1>
             <p className='event-text'>{props.events[props.index].eventText}</p>
             <form onSubmit={handleFormSubmit} className="form-input">
-                <input onChange={handleUserInput} type="text" id="choice-input"/>
+                <input onChange={handleUserInput} type="text" id="choice-input" placeholder='enter choice here'/>
             </form>
         </section>
         </div>
@@ -43,7 +43,7 @@ function Events(props) {
             <section className="event-section flex-col-center">
                 <p className='event-text'>{props.events[props.index].eventText}</p>
                 <form onSubmit={handleFormSubmit} className="form-input">
-                    <input onChange={handleUserInput} type="text" id="choice-input"/>
+                    <input onChange={handleUserInput} type="text" id="choice-input" placeholder='enter choice here'/>
                 </form>
             </section>
             </div>

@@ -6,8 +6,8 @@ import axios from "axios"
 function Login(props) {
 
     let navigate = useNavigate()
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
+    const [username, setUsername] = useState(null)
+    const [password, setPassword] = useState(null)
 
     function handleUsername(e) {
         setUsername(e.target.value)
@@ -23,7 +23,9 @@ function Login(props) {
     }
 
     const handleUserLogin = (e) => {
-        e.preventDefault() 
+        e.preventDefault()
+        
+        
         props.setLoading(true)
 
         const body = {
@@ -48,9 +50,10 @@ function Login(props) {
                     <br/>
                     <input type="text" placeholder="enter username" onChange={handleUsername} name="uname" id="username-input" required />
                     <br/>
+                    <br/>
                     <label><b>password</b></label>
                     <br/>
-                    <input type="text" placeholder="enter password" onChange={handlePassword} name="passw" id="password-input" required />
+                    <input type="password" placeholder="enter password" onChange={handlePassword} name="passw" id="password-input" required />
                     <br/>
                     <input type="submit" id="login-submit-button" onClick={handleUserLogin}/>
                     <br/>
