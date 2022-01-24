@@ -32,7 +32,7 @@ app.get('/api/leaderboard', ctrl.getLeaderboard)
 
 app.post(`/auth/createAccount`, ctrl.createAccount)
 app.post(`/auth/login`, ctrl.login)
-
+app.get(`/auth/logout`, ctrl.logout)
 app.post('/api/saveGame', ctrl.saveGame)
 
 // app.get('/allUsers', ctrl.getAllUsers) -- this was a test

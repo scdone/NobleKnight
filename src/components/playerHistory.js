@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 
 
@@ -9,6 +10,16 @@ function PlayerHistory(props) {
     const handleNewGameButton = () => {
         navigate("/getname")
     }
+
+    function handleLogout() {
+        props.setLoading(true)
+        axios.get(`/auth/logout`)
+            .then(() => {
+              props.setUser(null)
+              props.setLoading(false)
+            })
+        navigate('/')
+      }
 
     return (
 
@@ -24,6 +35,9 @@ function PlayerHistory(props) {
                 <br/>
             </section>
             <button id="start-new-game-button" onClick={handleNewGameButton}>Start New Game</button>
+            <br/>
+            <br/>
+            <button onClick={handleLogout}>Logout</button>
         </section>
 
     )

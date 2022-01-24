@@ -67,8 +67,8 @@ function App() {
           <Route path="/getname" element={<GetPlayerName setEvents={setEvents} playerName={playerName} setPlayerName={setPlayerName}  />} />
           <Route path="/events" element={<Events events={events} index={index}setIndex={setIndex} userInput={userInput} setUserInput={setUserInput} playerName={playerName}/>} />
           <Route path="/choices" element={<Choices events={events} index={index} setIndex={setIndex} score={score} setScore={setScore} userInput={userInput} setUserInput={setUserInput} />} />
-          <Route path="/gameover" element={<GameOver score={score} leaderboard={leaderboard}/>} />
-          <Route path="/youwin" element={<YouWin score={score} playerName={playerName} leaderboard={leaderboard} />} />
+          <Route path="/gameover" element={<GameOver setPlayerName={setPlayerName} setScore={setScore} setIndex={setIndex} score={score} leaderboard={leaderboard} user={user} setUser={setUser} loading={loading} setLoading={setLoading}/>} />
+          <Route path="/youwin" element={<YouWin setPlayerName={setPlayerName} setScore={setScore} setIndex={setIndex} score={score} playerName={playerName} leaderboard={leaderboard} user={user} setUser={setUser} loading={loading} setLoading={setLoading} />} />
         </Routes>
       </BrowserRouter>
    </div>

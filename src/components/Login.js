@@ -18,7 +18,7 @@ function Login(props) {
     }
 
     const handleClickAsGuest = () => {
-        props.setUser('')
+        props.setUser(null)
         navigate('/getname')
     }
 

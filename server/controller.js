@@ -98,8 +98,15 @@ module.exports = {
 
 
     //logout
-
-
+    logout: (req, res) => {
+        try {
+            req.session.destroy()
+            res.sendStatus(200)
+        } catch (error) {
+            console.log(error)
+        }
+     },
+     
     //get user's previous games
     getPlayerHistory: async (req, res) => {
         const { id } = req.session.user

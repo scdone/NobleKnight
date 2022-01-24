@@ -10,14 +10,32 @@ function YouWin(props) {
 
     let navigate = useNavigate();
 
-    const handleClickplay = () => {
-      navigate('/getname')
+    const handlePlayAgain = () => {
+        //////NEED TO ADD SAVING FUNCTION HERE BEFORE RESETTING VALUES AND NAVIGATING///////////
+        props.setPlayerName('')
+        props.setIndex(0)
+        props.setScore(0)
+        navigate('/getname')
     }
   
     const handleClickQuit = () => {
+        props.setPlayerName('')
+        props.setIndex(0)
+        props.setScore(0)
         navigate('/')
     }
 
+    function handleLogout() {
+        props.setLoading(true)
+        axios.get(`/auth/logout`)
+            .then(() => {
+              props.setUser(null)
+              props.setLoading(false)
+            })
+        navigate('/')
+      }
+
+    if(props.user){
     return (
 
     <section className='youwin-section'>
@@ -32,8 +50,8 @@ function YouWin(props) {
                 <h1>Ending Score: {props.score}</h1>
             </div>
             <div id="end-game-buttons">
-                <button id="save-and-quit-btn" onClick={handleClickQuit}>Save and Quit</button>
-                <button id="save-and-play-again-btn" onClick={handleClickplay}>Save and Play Again</button>
+                <button id="save-and-quit-btn" onClick={handleLogout}>Save and Logout</button>
+                <button id="save-and-play-again-btn" onClick={handlePlayAgain}>Save and Play Again</button>
             </div>
             </div>
             <div id="end-game-right-col">
@@ -49,7 +67,40 @@ function YouWin(props) {
             </div>
             </div>
     </section>
-    )
+    )}
+    else if(props.user === null) {
+        return (
+
+            <section className='youwin-section'>
+                <h1 className='h1'>Huzzah, {props.playerName}! You have won!</h1>
+                    
+                    <div id="you-win-imgs">
+            
+                    </div>
+                    <div id="end-game-columns">
+                    <div id="end-game-left-col">   
+                    <div id="end-game-div">
+                        <h1>Ending Score: {props.score}</h1>
+                    </div>
+                    <div id="end-game-buttons">
+                        <button id="save-and-quit-btn" onClick={handleClickQuit}>Quit</button>
+                    </div>
+                    </div>
+                    <div id="end-game-right-col">
+                        <h1 id="leaderboard-title">Leaderboard</h1>
+                            <div className='leaders'>
+                             <ol>
+                                 
+                                    {props.leaderboard.map(
+                                    ({ username, score, game_id }) => <li key={game_id} >{`${username} // Score: ${score}`}</li>)}
+                            
+                             </ol>
+                            </div>
+                    </div>
+                    </div>
+            </section>
+            )
+    }
 }
 
 export default YouWin
