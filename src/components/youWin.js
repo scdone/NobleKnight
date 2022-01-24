@@ -1,8 +1,12 @@
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom'
 
 
 function YouWin(props) {
-    console.log(123, props)
+    // console.log(props)
+
+    // console.log(props.leaderboard)
+
 
     let navigate = useNavigate();
 
@@ -34,11 +38,14 @@ function YouWin(props) {
             </div>
             <div id="end-game-right-col">
                 <h1 id="leaderboard-title">Leaderboard</h1>
-                <p>1. player // score: 1000</p>
-                <p>2. player // score: 900</p>
-                <p>3. player // score: 800</p>
-                <p>4. player // score: 700</p>
-                <p>5. player // score: 600</p>
+                    <div className='leaders'>
+                     <ol>
+                         
+                            {props.leaderboard.map(
+                            ({ username, score, game_id }) => <li key={game_id} >{`${username} // Score: ${score}`}</li>)}
+                    
+                     </ol>
+                    </div>
             </div>
             </div>
     </section>

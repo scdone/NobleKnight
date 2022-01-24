@@ -40,27 +40,27 @@ module.exports = {
     //register
     //logout
     //getUserHistory
-    getPlayerHistory: (req, res) => {
+    getPlayerHistory: async (req, res) => {
         const { id } = req.session.user
-        sequelize.query(`SELECT game_date, knight_name, score
+        const previousGames = await sequelize.query(`SELECT game_date, knight_name, score
         FROM playthroughs 
         WHERE user_id = ${id};`)
 
-        .then(dbRes => res.status(200).send(dbRes[0]))
-        .catch(err => console.log(err))
+        res.status(200).send(previousGames)
     },
 
     //getLeaderboard
-    getLeaderboard: (req, res) => {
-        sequelize.query(`SELECT playthroughs.game_date, users.username, playthroughs.score
+    getLeaderboard: async (req, res) => {
+        const leaderboard = await sequelize.query(`SELECT playthroughs.game_date, users.username, playthroughs.game_id, playthroughs.score
         FROM playthroughs
         JOIN users
         ON playthroughs.user_id = users.id
         ORDER BY score desc
         LIMIT 5;`)
 
-        .then(dbRes => res.status(200).send(dbRes[0]))
-        .catch(err => console.log(err))
+         console.log(leaderboard)
+
+        res.status(200).send(leaderboard)
     },
     //saveGame
     saveGame: (req, res) => {

@@ -11,7 +11,7 @@ import GameOver from './components/GameOver';
 import YouWin from './components/YouWin';
 import Choices from './components/Choices';
 
-import { useState } from 'react'; 
+import { useState, useEffect } from 'react'; 
 
 
 import axios from 'axios';
@@ -29,6 +29,16 @@ function App() {
   const [score, setScore] = useState(0)
   const [userInput, setUserInput] = useState('')
   const [playerName, setPlayerName] = useState('')
+  const [leaderboard, setLeaderboard] = useState('')
+
+  function getLeaderboardFront() {
+    axios.get('/api/leaderboard')
+        .then(res => {
+          console.log(res.data)
+          setLeaderboard(res.data[0])})
+  }
+
+  useEffect(()=>{getLeaderboardFront()}, [])
 
 
 
@@ -48,8 +58,8 @@ function App() {
           <Route path="/getname" element={<GetPlayerName setEvents={setEvents} playerName={playerName} setPlayerName={setPlayerName}  />} />
           <Route path="/events" element={<Events events={events} index={index}setIndex={setIndex} userInput={userInput} setUserInput={setUserInput} playerName={playerName}/>} />
           <Route path="/choices" element={<Choices events={events} index={index} setIndex={setIndex} score={score} setScore={setScore} userInput={userInput} setUserInput={setUserInput} />} />
-          <Route path="/gameover" element={<GameOver score={score}/>} />
-          <Route path="/youwin" element={<YouWin score={score} playerName={playerName} />} />
+          <Route path="/gameover" element={<GameOver score={score} leaderboard={leaderboard}/>} />
+          <Route path="/youwin" element={<YouWin score={score} playerName={playerName} leaderboard={leaderboard} />} />
         </Routes>
       </BrowserRouter>
    </div>

@@ -449,3 +449,7 @@ label {
   animation-iteration-count: 1;
   animation-timing-function: steps(100);
 }
+
+.leaders {
+  line-height: 1.5;
+}
