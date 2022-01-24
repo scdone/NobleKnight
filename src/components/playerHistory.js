@@ -15,7 +15,7 @@ function PlayerHistory(props) {
         <section className='player-history-section'>
             <h1 id="previous-games-title">Welcome, {props.user.username} </h1>
             <section id="previous-games-container">
-                <h1>Your previous games:</h1>
+                <h1 id="previous-games">Your previous games:</h1>
                 <div id="most-recent-game">Date: 1/19/2022 / KnightName: Anubis / Score: 25 / Ranking:5</div>
                 <br/>
                 <div id="next-recent-game">Date: 1/12/2022 / KnightName: Maddox / Score: 17 / Ranking:12</div>

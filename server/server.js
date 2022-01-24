@@ -31,6 +31,7 @@ app.get('/api/playerHistory/:id', ctrl.getPlayerHistory)
 app.get('/api/leaderboard', ctrl.getLeaderboard)
 
 app.post(`/auth/createAccount`, ctrl.createAccount)
+app.post(`/auth/login`, ctrl.login)
 
 app.post('/api/saveGame', ctrl.saveGame)
 
