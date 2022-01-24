@@ -15,7 +15,7 @@ function GameOver(props) {
     props.setPlayerName('')
     props.setIndex(0)
     props.setScore(0)
-    navigate('/getname')
+    navigate('/playerhistory')
 }
 
 const handleClickQuit = () => {

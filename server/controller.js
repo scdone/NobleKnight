@@ -110,11 +110,11 @@ module.exports = {
     //get user's previous games
     getPlayerHistory: async (req, res) => {
         const { id } = req.session.user
-        const previousGames = await sequelize.query(`SELECT game_date, knight_name, score
+        const previousGames = await sequelize.query(`SELECT game_date, knight_name, score, game_id
         FROM playthroughs 
         WHERE user_id = ${id};`)
 
-        res.status(200).send(previousGames)
+        res.status(200).send(previousGames[0])
     },
 
     //get leaderboard from database

@@ -1,11 +1,32 @@
 import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 
 
 
 function PlayerHistory(props) {
 
+    const [loading, setLoading] = useState(true)
+    const [previousGames, setPreviousGames] = useState(null)
+
     let navigate = useNavigate()
+
+    function getPlayerHistoryFront() {
+        if (!previousGames) {
+            axios.get('/api/playerhistory')
+                .then(res => {
+                  setPreviousGames(res.data)
+                  setLoading(false)
+                })
+        }
+        
+      }
+
+      useEffect(()=>{
+          getPlayerHistoryFront()
+        }, [previousGames])
+
+
 
     const handleNewGameButton = () => {
         navigate("/getname")
@@ -26,13 +47,15 @@ function PlayerHistory(props) {
         <section className='player-history-section'>
             <h1 id="previous-games-title">Welcome, {props.user.username} </h1>
             <section id="previous-games-container">
-                <h1 id="previous-games">Your previous games:</h1>
-                <div id="most-recent-game">Date: 1/19/2022 / KnightName: Anubis / Score: 25 / Ranking:5</div>
-                <br/>
-                <div id="next-recent-game">Date: 1/12/2022 / KnightName: Maddox / Score: 17 / Ranking:12</div>
-                <br/>
-                <div id="third-recent-game">Date: 1/01/2022 / KnightName: Heathen / Score: -7 / Ranking:69</div>
-                <br/>
+                <h1 id="previous-games">Previous Games</h1>
+                <ul>
+                {
+                loading? 
+                <li>loading . . . </li> :
+                previousGames.map(({ game_date, knight_name, score, game_id }) => <li key={game_id} >{`${game_date}  -  Score: ${score}  -  ${knight_name}`}</li>)
+                                    
+                }
+                </ul>         
             </section>
             <button id="start-new-game-button" onClick={handleNewGameButton}>Start New Game</button>
             <br/>

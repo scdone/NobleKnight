@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
   });
 
 app.get('/allEvents', ctrl.getAllEvents)
-app.get('/api/playerHistory/:id', ctrl.getPlayerHistory)
+app.get('/api/playerhistory', ctrl.getPlayerHistory)
 app.get('/api/leaderboard', ctrl.getLeaderboard)
 
 app.post(`/auth/createAccount`, ctrl.createAccount)

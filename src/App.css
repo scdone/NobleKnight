@@ -316,20 +316,11 @@ label {
   text-align: left;
 }
 
-#most-recent-game {
-  margin-left: 80px;
-  border-bottom: 1px dashed #39FF14;
+#previous-games {
+  text-align: center;
+  text-decoration: underline;
 }
 
-#next-recent-game {
-  margin-left: 80px;
-  border-bottom: 1px dashed #39FF14;
-}
-
-#third-recent-game {
-  margin-left: 80px;
-  border-bottom: 1px dashed #39FF14;
-}
 
 /*/////// PLAYER HISTORY PAGE STYLING ////////*/
 

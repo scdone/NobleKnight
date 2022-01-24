@@ -16,11 +16,6 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 
-function enterGame(e) {
-  e.preventDefault()
-
-}
-
 
 function App() {
   const [events, setEvents] = useState([])
@@ -30,7 +25,8 @@ function App() {
   const [playerName, setPlayerName] = useState('')
   const [leaderboard, setLeaderboard] = useState('')
   const [user, setUser] = useState(null)
-  const [loading, setLoading] = useState(false) 
+  const [loading, setLoading] = useState(false)
+
 
   function getLeaderboardFront() {
     axios.get('/api/leaderboard')

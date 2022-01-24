@@ -3,10 +3,6 @@ import { useNavigate } from 'react-router-dom'
 
 
 function YouWin(props) {
-    // console.log(props)
-
-    // console.log(props.leaderboard)
-
 
     let navigate = useNavigate();
 
@@ -15,7 +11,7 @@ function YouWin(props) {
         props.setPlayerName('')
         props.setIndex(0)
         props.setScore(0)
-        navigate('/getname')
+        navigate('/playerhistory')
     }
   
     const handleClickQuit = () => {
