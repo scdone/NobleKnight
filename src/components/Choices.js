@@ -11,7 +11,10 @@ function nextEventFirstChoice(e) {
     props.setIndex(props.index + 1)
     props.setScore(props.score + firstEventChoice.changeScore)
 
-    if(firstEventChoice.gameOver === true){
+    if(firstEventChoice.youWin === true){
+        navigate('/youwin')
+    }
+    else if(firstEventChoice.gameOver === true){
         navigate('/gameover')}
     else if (firstEventChoice.gameOver === false) {
         navigate('/events')

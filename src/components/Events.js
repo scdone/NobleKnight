@@ -41,7 +41,6 @@ function Events(props) {
         return (
             <div className="welcome-box">
             <section className="event-section flex-col-center">
-                <h1 className="h1">Huzzah, {props.playerName}! Welcome to ye kingdom!</h1>
                 <p className='event-text'>{props.events[props.index].eventText}</p>
                 <form onSubmit={handleFormSubmit} className="form-input">
                     <input onChange={handleUserInput} type="text" id="choice-input"/>
@@ -49,6 +48,9 @@ function Events(props) {
             </section>
             </div>
         )}
+    else if(props.index === 10) {
+        navigate('/youwin')
+    }
 
 }
  

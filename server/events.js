@@ -9,7 +9,7 @@ const firstEvent = [
         eventText: `  
         For seven years ye have pined for the beautiful Princess Wren's hand in marriage. Her father, King Bloodworth III, has sent a declaration throughout the land for all knights to compete to win his blessing. 
         The first knight to bring the ancient Almighty Claymore of Justice back to the King will win the heart and hand of Princess Wren forever. 
-        Legend has it the ancient Claymore is hidden in the Monstrous Caverns past the depths of the Deadhaze forest. Danger and Mystery abound...
+        Legend has it, the ancient Claymore is hidden in the Monstrous Caverns past the depths of the Deadhaze forest. Danger and Mystery abound...
         Do ye choose to embark on this treacherous journey, YES or NO?`,
         choices: {
             firstChoice: {
@@ -53,7 +53,7 @@ const events = [
     {
         id: 2,
         eventName: `elopement`,
-        eventText: `As you continue down the path, you see a womanly figure appear in the distance. You draw closer…. You see it is Princess Wren herself! Princess Wren asks you to run away with her. 
+        eventText: `As you continue down the path, you see a womanly figure appear in the distance. She draws closer . . .  You see it is Princess Wren herself! Princess Wren is impressed by your bravery and asks you to run away with her. 
         You may ELOPE or NOT ELOPE. What shall ye do?`,
         choices: {
             firstChoice: {
@@ -96,7 +96,7 @@ const events = [
     {
         id: 4,
         eventName: `knight party`,
-        eventText: `You continue to walk down the path. You hear someone calling your name from behind you. You turn around and see it is Sir Chad from your old fraternity. Sir Chad invites you to a Knightly Rager party down the road. You are feeling weary from your journey and could use a pint of mead…
+        eventText: `You hear someone calling your name from behind you. You turn around and see it is Sir Chad from your old fraternity. Sir Chad invites you to a Knightly Rager party down the road. You are feeling weary from your journey and could use a pint of mead…
         You may GO PARTY or NOT PARTY. What shall ye do?`,
         choices: {
             firstChoice: {
@@ -183,15 +183,16 @@ const lastEvents = [
     {
         id: 8,
         eventName: `sword`,
-        eventText: `You enter the cave. As your eyes adjust to the darkness, you see a mighty dragon sleeping in the back of the cave. The deep bellows you heard were the dragon’s snores. Near his enormous snout, you see a glowing rock with a sword stuck in the top. You recognize the sword as the Almighty Claymore of Justice. 
+        eventText: `As your eyes adjust to the darkness, you see a mighty dragon sleeping in the back of the cave. The deep bellows you heard were the dragon’s snores. Near his enormous snout, you see a glowing rock with a sword stuck in the top. You recognize the sword as the Almighty Claymore of Justice. 
         The dragon appears to be guarding the sword. 
         You may TAKE SWORD or WITHDRAW QUIETLY. What shall ye do?`,
         choices: {
             firstChoice: {
                 choiceName: `TAKE SWORD`,
-                choiceText: `HUZZAH, NOBLE _________ You take the sword without waking the dragon. You return to the kingdom and give the Almighty Claymore of Justice to King Bloodworthe. Impressed with your bravery, he gives you his blessing to marry Princess Wren. She swoons over your strength and skill. QUEST COMPLETED!`,
+                choiceText: `HUZZAH! You take the sword without waking the dragon. You return to the kingdom and give the Almighty Claymore of Justice to King Bloodworthe. Impressed with your bravery, he gives you his blessing to marry Princess Wren. She swoons over your strength and skill. QUEST COMPLETED!`,
                 gameOver: false,
-                changeScore: 80
+                changeScore: 80,
+                youWin: true
             },
             secondChoice: {
                 choiceName: `WITHDRAW QUIETLY`,
