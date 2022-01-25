@@ -9,7 +9,7 @@ const { SERVER_PORT, SESSION_SECRET } = process.env
 
 const ctrl = require('./controller')
 
-
+app.use(express.static(`${__dirname}/../build`))
 app.use(express.json())
 app.use(cors())
 app.use(session({
@@ -22,10 +22,6 @@ app.use(session({
 }))
 
 
-app.get('/', (req, res) => {
-    res.send('Hello World!!!');
-  });
-
 app.get('/allEvents', ctrl.getAllEvents)
 app.get('/api/playerhistory', ctrl.getPlayerHistory)
 app.get('/api/leaderboard', ctrl.getLeaderboard)
@@ -34,8 +30,6 @@ app.post('/api/saveGame', ctrl.saveGame)
 app.post(`/auth/createAccount`, ctrl.createAccount)
 app.post(`/auth/login`, ctrl.login)
 app.get(`/auth/logout`, ctrl.logout)
-
-// app.get('/allUsers', ctrl.getAllUsers) -- this was a test
 
 
 
