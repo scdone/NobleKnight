@@ -9,7 +9,6 @@ const { SERVER_PORT, SESSION_SECRET } = process.env
 
 const ctrl = require('./controller')
 
-app.use(express.static(`${__dirname}/../build`))
 app.use(express.json())
 app.use(cors())
 app.use(session({
@@ -20,7 +19,7 @@ app.use(session({
     maxAge: 1000 * 60 * 60 * 72
   }
 }))
-
+app.use(express.static(`${__dirname}/../build`))
 
 app.get('/allEvents', ctrl.getAllEvents)
 app.get('/api/playerhistory', ctrl.getPlayerHistory)
