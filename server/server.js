@@ -29,11 +29,11 @@ app.get('/', (req, res) => {
 app.get('/allEvents', ctrl.getAllEvents)
 app.get('/api/playerhistory', ctrl.getPlayerHistory)
 app.get('/api/leaderboard', ctrl.getLeaderboard)
+app.post('/api/saveGame', ctrl.saveGame)
 
 app.post(`/auth/createAccount`, ctrl.createAccount)
 app.post(`/auth/login`, ctrl.login)
 app.get(`/auth/logout`, ctrl.logout)
-app.post('/api/saveGame', ctrl.saveGame)
 
 // app.get('/allUsers', ctrl.getAllUsers) -- this was a test
 

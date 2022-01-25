@@ -131,21 +131,15 @@ module.exports = {
         res.status(200).send(leaderboard)
     },
     //save game
-    saveGame: (req, res) => {
-        const { id, game_date, knight_name, score } = req.session
+    saveGame: async (req, res) => {
 
-        let newSavedGame = {
-            "game_id": newGameId,
-            "user_id": id,
-            "game_date": game_date,
-            "knight_name": knight_name,
-            "score": score
-        }
+        const { user_id, knight_name, score } = req.body
 
-        //// dbData? db?
-        db.push(newSavedGame)
+        game_date = '2022-01-24'
 
-        res.status(200).send(newSavedGame)
+        await sequelize.query(`INSERT INTO playthroughs (user_id, game_date, knight_name, score) VALUES(${user_id}, '${game_date}', '${knight_name}', ${score});`)
+
+        res.status(200).send('game saved successfully')
     }
     //getAllUsers
 

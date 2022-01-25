@@ -42,6 +42,7 @@ function PlayerHistory(props) {
         navigate('/')
       }
 
+      console.log(props.user)
     return (
 
         <section className='player-history-section'>

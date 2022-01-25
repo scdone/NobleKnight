@@ -37,6 +37,22 @@ function App() {
 
   useEffect(()=>{getLeaderboardFront()}, [])
 
+  function saveGameFront() {
+    const body = {
+      user_id: user.id,
+      knight_name: playerName,
+      score: score
+    }
+
+    axios.post('/api/saveGame', body)
+      .then(res => {
+        console.log(res)
+      })
+  }
+
+
+
+
 
   if(loading) {
     return(
@@ -63,8 +79,8 @@ function App() {
           <Route path="/getname" element={<GetPlayerName setEvents={setEvents} playerName={playerName} setPlayerName={setPlayerName}  />} />
           <Route path="/events" element={<Events events={events} index={index}setIndex={setIndex} userInput={userInput} setUserInput={setUserInput} playerName={playerName}/>} />
           <Route path="/choices" element={<Choices events={events} index={index} setIndex={setIndex} score={score} setScore={setScore} userInput={userInput} setUserInput={setUserInput} />} />
-          <Route path="/gameover" element={<GameOver setPlayerName={setPlayerName} setScore={setScore} setIndex={setIndex} score={score} leaderboard={leaderboard} user={user} setUser={setUser} loading={loading} setLoading={setLoading}/>} />
-          <Route path="/youwin" element={<YouWin setPlayerName={setPlayerName} setScore={setScore} setIndex={setIndex} score={score} playerName={playerName} leaderboard={leaderboard} user={user} setUser={setUser} loading={loading} setLoading={setLoading} />} />
+          <Route path="/gameover" element={<GameOver saveGameFront={saveGameFront} setPlayerName={setPlayerName} setScore={setScore} setIndex={setIndex} score={score} leaderboard={leaderboard} user={user} setUser={setUser} loading={loading} setLoading={setLoading}/>} />
+          <Route path="/youwin" element={<YouWin saveGameFront={saveGameFront} setPlayerName={setPlayerName} setScore={setScore} setIndex={setIndex} score={score} playerName={playerName} leaderboard={leaderboard} user={user} setUser={setUser} loading={loading} setLoading={setLoading} />} />
         </Routes>
       </BrowserRouter>
    </div>

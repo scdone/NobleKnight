@@ -11,7 +11,7 @@ function GameOver(props) {
   let navigate = useNavigate();
 
   const handlePlayAgain = () => {
-    //////NEED TO ADD SAVING FUNCTION HERE BEFORE RESETTING VALUES AND NAVIGATING///////////
+    props.saveGameFront()
     props.setPlayerName('')
     props.setIndex(0)
     props.setScore(0)
@@ -26,6 +26,7 @@ const handleClickQuit = () => {
 }
 
 function handleLogout() {
+    props.saveGameFront()
     props.setLoading(true)
     axios.get(`/auth/logout`)
         .then(() => {
