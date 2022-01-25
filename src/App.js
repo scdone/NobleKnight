@@ -29,7 +29,6 @@ function App() {
   function getLeaderboardFront() {
     axios.get('/api/leaderboard')
         .then(res => {
-          console.log(res.data)
           setLeaderboard(res.data[0])})
   }
 
