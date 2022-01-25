@@ -47,7 +47,7 @@ function App() {
     axios.post('/api/saveGame', body)
       .then(res => {
         console.log(res)
-      })
+      }) 
   }
 
 

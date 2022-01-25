@@ -31,7 +31,7 @@ function GetPlayerName(props) {
             <img id="doors-img" src={require('../fonts/doors.png')} />
             </div> 
             <form id="get-player-name-form" onSubmit={handleGetNameSubmit}>
-                <input onChange={getName} type="text" id="get-name-input" name="playerName"/>
+                <input autoFocus onChange={getName} type="text" id="get-name-input" name="playerName"/>
             </form>
         </section>
     )

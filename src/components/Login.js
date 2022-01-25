@@ -58,7 +58,7 @@ function Login(props) {
                 <form className="user-login" onSubmit={handleUserLogin}>
                     <label><b>username</b></label>
                     <br/>
-                    <input type="text" placeholder="enter username" onChange={handleUsername} name="uname" id="username-input" required />
+                    <input autoFocus type="text" placeholder="enter username" onChange={handleUsername} name="uname" id="username-input" required />
                     <br/>
                     <br/>
                     <label><b>password</b></label>

@@ -58,7 +58,7 @@ function CreateAccount(props) {
                     <label>
                         create username
                         <br/>
-                    <input type="text" id="create-username-input" onChange={handleUsername} />
+                    <input autoFocus type="text" id="create-username-input" onChange={handleUsername} />
                     </label>
                     <br/>
                     <label>

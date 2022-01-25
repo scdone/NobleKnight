@@ -3,10 +3,8 @@ import { useNavigate } from 'react-router-dom'
 
 
 function Events(props) {
-
-    console.log(props)
     let navigate = useNavigate()
-    let userChoice = props.userInput
+    let {userInput: userChoice} = props
     let firstEventChoice = props.events[props.index].choices.firstChoice
     let secondEventChoice = props.events[props.index].choices.secondChoice
 
@@ -16,6 +14,9 @@ function Events(props) {
 
     const handleFormSubmit = (e) => {
         e.preventDefault()
+        if (userChoice === '') {
+            return
+        }
         if(userChoice !== firstEventChoice.choiceName && userChoice !== secondEventChoice.choiceName){
             alert('That is not a valid choice!')
         }
@@ -32,7 +33,7 @@ function Events(props) {
             <h1 className="h1">Huzzah, {props.playerName}! Welcome to ye kingdom!</h1>
             <p className='event-text'>{props.events[props.index].eventText}</p>
             <form onSubmit={handleFormSubmit} className="form-input">
-                <input onChange={handleUserInput} type="text" id="choice-input" placeholder='enter choice here'/>
+                <input autoFocus onChange={handleUserInput} type="text" id="choice-input" placeholder='enter choice here'/>
             </form>
         </section>
         </div>
@@ -43,7 +44,7 @@ function Events(props) {
             <section className="event-section flex-col-center">
                 <p className='event-text'>{props.events[props.index].eventText}</p>
                 <form onSubmit={handleFormSubmit} className="form-input">
-                    <input onChange={handleUserInput} type="text" id="choice-input" placeholder='enter choice here'/>
+                    <input autoFocus onChange={handleUserInput} type="text" id="choice-input" placeholder='enter choice here'/>
                 </form>
             </section>
             </div>
