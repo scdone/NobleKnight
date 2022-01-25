@@ -10,7 +10,7 @@ import GameOver from './components/GameOver';
 import YouWin from './components/YouWin';
 import Choices from './components/Choices';
 
-import { useState, useEffect } from 'react'; 
+import React, { useState, useEffect } from 'react'; 
 
 import axios from 'axios';
 
