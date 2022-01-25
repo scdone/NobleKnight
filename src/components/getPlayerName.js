@@ -26,8 +26,8 @@ function GetPlayerName(props) {
         <section className='get-player-name-section'>
             <div id="nameth-door-img-div">
             <h1 id="nameth">Halt! Before we go further... <br/>What is thy nameth?</h1>
-            <img id="doors-img" src={require('../fonts/doors.png')} />
             </div> 
+            <img id="doors-img" src={require('../fonts/doors.png')} />
             <form id="get-player-name-form" onSubmit={handleGetNameSubmit}>
                 <input autoFocus onChange={getName} type="text" id="get-name-input" name="playerName"/>
             </form>

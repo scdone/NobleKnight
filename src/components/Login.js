@@ -65,7 +65,8 @@ function Login(props) {
                     <br/>
                     <input type="password" placeholder="enter password" onChange={handlePassword} name="passw" id="password-input" required />
                     <br/>
-                    <input type="submit" id="login-submit-button" onClick={handleUserLogin}/>
+                    <button type="submit" id="login-submit-button" onClick={handleUserLogin}>Login</button>
+                    <br/>
                     <br/>
                     <Link to='/createaccount' id="create-acct-link">don't have an account? <br/> create one here</Link>
                 </form>
