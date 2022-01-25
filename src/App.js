@@ -1,14 +1,14 @@
-import 'App.css';
+import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Welcome from 'components/Welcome';
-import Login from 'components/Login';
-import CreateAccount from 'components/CreateAccount';
-import PlayerHistory from 'components/PlayerHistory';
-import GetPlayerName from 'components/GetPlayerName';
-import Events from 'components/Events';
-import GameOver from 'components/GameOver';
-import YouWin from 'components/YouWin';
-import Choices from 'components/Choices';
+import Welcome from './components/Welcome';
+import Login from './components/Login';
+import CreateAccount from './components/CreateAccount';
+import PlayerHistory from './components/PlayerHistory';
+import GetPlayerName from './components/GetPlayerName';
+import Events from './components/Events';
+import GameOver from './components/GameOver';
+import YouWin from './components/YouWin';
+import Choices from './components/Choices';
 
 import { useState, useEffect } from 'react'; 
 
