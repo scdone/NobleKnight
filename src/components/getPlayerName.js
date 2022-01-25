@@ -14,9 +14,7 @@ function GetPlayerName(props) {
     }
 
     function getName(e) {
-        // console.log(e.target.value)
-        // console.log(props.playerName)
-        props.setPlayerName(e.target.value)
+        props.setPlayerName(e.target.value.toUpperCase())
     }
 
     function handleGetNameSubmit(e) { 

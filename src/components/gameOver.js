@@ -24,6 +24,7 @@ const handleClickQuit = () => {
 
 function handleLogout() {
     props.saveGameFront()
+    props.setIndex(0)
     props.setLoading(true)
     axios.get(`/auth/logout`)
         .then(() => {
