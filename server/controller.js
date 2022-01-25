@@ -1,5 +1,7 @@
 const { allEvents, firstEvent, events, lastEvents } = require('./events')
 
+const { DateTime } = require('luxon')
+
 require('dotenv').config()
 const {CONNECTION_STRING} = process.env
 const Sequelize = require('sequelize')
@@ -135,7 +137,11 @@ module.exports = {
 
         const { user_id, knight_name, score } = req.body
 
-        game_date = '2022-01-24'
+        let now = Date.now()
+
+        let dateNow = new DateTime(now)
+
+        let game_date = dateNow.toISODate()
 
         await sequelize.query(`INSERT INTO playthroughs (user_id, game_date, knight_name, score) VALUES(${user_id}, '${game_date}', '${knight_name}', ${score});`)
 

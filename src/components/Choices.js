@@ -11,10 +11,6 @@ let secondEventChoice = props.events[props.index].choices.secondChoice
 const choiceMachine = (e) => {
     if(e.key === 'Enter') {
         if(userChoice === firstEventChoice.choiceName){
-            props.setIndex(props.index + 1)
-
-            props.setUserInput('')
-            navigate('/youwin')
             props.setScore(props.score + firstEventChoice.changeScore)
 
             if(firstEventChoice.youWin === true){
@@ -22,9 +18,11 @@ const choiceMachine = (e) => {
                 navigate('/youwin')
             }
             else if(firstEventChoice.gameOver === true){
+                props.setIndex(props.index + 1)
                 props.setUserInput('')
                 navigate('/gameover')}
             else if (firstEventChoice.gameOver === false) {
+                props.setIndex(props.index + 1)
                 props.setUserInput('')
                 navigate('/events')
             }
