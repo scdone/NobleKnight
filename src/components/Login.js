@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 import { Link , useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import axios from "axios"
@@ -8,6 +8,7 @@ function Login(props) {
     let navigate = useNavigate()
     const [username, setUsername] = useState(null)
     const [password, setPassword] = useState(null)
+
 
     function handleUsername(e) {
         setUsername(e.target.value)
@@ -38,8 +39,17 @@ function Login(props) {
                 props.setUser(res.data)
                 props.setLoading(false)
             })
-        navigate('/playerhistory')
+            .catch((error)=> {
+                props.setLoading(false)
+                alert(error.response.data)
+            })
     }
+
+    useEffect(() => {
+        if (props.user) {
+            navigate('/playerhistory')
+        }
+    }, [props.user])
 
     return (
         <section className='login-section'>

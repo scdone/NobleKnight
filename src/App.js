@@ -57,7 +57,7 @@ function App() {
        <BrowserRouter>
         <Routes>
           <Route path="/" element={<Welcome />} />
-          <Route path="/login" element={<Login setUser={setUser} loading={loading} setLoading={setLoading}/>} />
+          <Route path="/login" element={<Login user={user} setUser={setUser} loading={loading} setLoading={setLoading}/>} />
           <Route path="/playerhistory" element={<PlayerHistory user={user} setUser={setUser} loading={loading} setLoading={setLoading}/>} />
           <Route path="/createaccount" element={<CreateAccount setUser={setUser} loading={loading} setLoading={setLoading} />} />
           <Route path="/getname" element={<GetPlayerName setEvents={setEvents} playerName={playerName} setPlayerName={setPlayerName}  />} />
