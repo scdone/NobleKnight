@@ -12,9 +12,7 @@ import Choices from './components/Choices';
 
 import { useState, useEffect } from 'react'; 
 
-
 import axios from 'axios';
-
 
 
 function App() {
@@ -49,9 +47,6 @@ function App() {
         console.log(res)
       }) 
   }
-
-
-
 
 
   if(loading) {

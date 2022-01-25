@@ -19,7 +19,6 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
 let newGameId = 7
 
 module.exports = {
-    //getAllEvents
     getAllEvents: (req, res) => {
         function randomizeEvents(arr) {
             for(let i = arr.length - 1; i > 0; i--){
@@ -38,8 +37,6 @@ module.exports = {
 
         res.status(200).send(allEvents)
         },
-
-    //create new account
     createAccount: async (req, res) => {
         try {
             const { username, password } = req.body
@@ -69,11 +66,9 @@ module.exports = {
             console.log(error)            
         }
     },
-    //login
     login: async (req, res) => {
         try {
             const { username, password } = req.body
-
             const existingUser = await sequelize.query(`SELECT * FROM users
             WHERE username = '${username}'`)
 
@@ -88,18 +83,13 @@ module.exports = {
             }
 
             delete existingUser[0][0].password
-
             req.session.user = existingUser[0][0]
-
             res.status(200).send(req.session.user)
 
         } catch(error) {
             console.log(error)
         }
     },
-
-
-    //logout
     logout: (req, res) => {
         try {
             req.session.destroy()
@@ -108,8 +98,6 @@ module.exports = {
             console.log(error)
         }
      },
-     
-    //get user's previous games
     getPlayerHistory: async (req, res) => {
         const { id } = req.session.user
         const previousGames = await sequelize.query(`SELECT game_date, knight_name, score, game_id
@@ -118,8 +106,6 @@ module.exports = {
 
         res.status(200).send(previousGames[0])
     },
-
-    //get leaderboard from database
     getLeaderboard: async (req, res) => {
         const leaderboard = await sequelize.query(`SELECT playthroughs.game_date, users.username, playthroughs.game_id, playthroughs.score
         FROM playthroughs
@@ -132,54 +118,13 @@ module.exports = {
 
         res.status(200).send(leaderboard)
     },
-    //save game
     saveGame: async (req, res) => {
 
         const { user_id, knight_name, score } = req.body
-
         let now = Date.now()
-
         let dateNow = new DateTime(now)
-
         let game_date = dateNow.toISODate()
-
         await sequelize.query(`INSERT INTO playthroughs (user_id, game_date, knight_name, score) VALUES(${user_id}, '${game_date}', '${knight_name}', ${score});`)
-
         res.status(200).send('game saved successfully')
     }
-    //getAllUsers
-
-    //(getAllUsers function below was used as a test)
-    // getAllUsers: (req, res) => {
-    //     sequelize.query(`SELECT * FROM users`)
-    //     .then (dbRes => res.status(200).send(dbRes[0]))
-    //     .catch(err => console.log(err))
-    // }
 }
-
-
-/////////////////////////////////////////////////////////
-// test random event function 
-
-// let allEvents = []
-// let firstEvent = [1]
-// let events = [2, 3, 4, 5, 6, 7, 8]
-// let lastEvents = [9, 10]
-
-
-// function randomizeEvents(arr) {
-//   for(let i = arr.length - 1; i > 0; i--){
-//   let j = Math.floor(Math.random() * (i+1));
-//   [arr[i], arr[j]] = [arr[j], arr[i]];
-//   }
-//   return arr
-// }
-
-// let randomEvents = randomizeEvents(events)
-
-// allEvents.push(firstEvent)
-// allEvents.push(randomEvents)
-// allEvents.push(lastEvents)
-
-// console.log(allEvents)
-////////////////////////////////////////////////////////
