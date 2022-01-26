@@ -66,7 +66,6 @@ function App() {
         </header>
        <BrowserRouter>
         <Switch>
-          <Route path="/" render={()=><Welcome />} />
           <Route path="/login" render={()=><Login user={user} setUser={setUser} loading={loading} setLoading={setLoading}/>} />
           <Route path="/playerhistory" render={()=><PlayerHistory user={user} setUser={setUser} loading={loading} setLoading={setLoading}/>} />
           <Route path="/createaccount" render={()=><CreateAccount setUser={setUser} loading={loading} setLoading={setLoading} />} />
@@ -75,6 +74,7 @@ function App() {
           <Route path="/choices" render={()=><Choices events={events} index={index} setIndex={setIndex} score={score} setScore={setScore} userInput={userInput} setUserInput={setUserInput} />} />
           <Route path="/gameover" render={()=><GameOver saveGameFront={saveGameFront} setPlayerName={setPlayerName} setScore={setScore} setIndex={setIndex} score={score} leaderboard={leaderboard} user={user} setUser={setUser} loading={loading} setLoading={setLoading}/>} />
           <Route path="/youwin" render={()=><YouWin saveGameFront={saveGameFront} setPlayerName={setPlayerName} setScore={setScore} setIndex={setIndex} score={score} playerName={playerName} leaderboard={leaderboard} user={user} setUser={setUser} loading={loading} setLoading={setLoading} />} />
+          <Route path="/" render={()=><Welcome />} />
         </Switch>
       </BrowserRouter>
    </div>
