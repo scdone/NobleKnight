@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { WithRouter } from './WithRouter'
+import WithRouter from './WithRouter'
 
 
 function PlayerHistory(props) {

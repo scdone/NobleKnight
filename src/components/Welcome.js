@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { WithRouter } from './WithRouter'
+import WithRouter from './WithRouter'
 
 
 function Welcome() {

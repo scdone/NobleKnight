@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import { WithRouter } from './WithRouter'
+import WithRouter from './WithRouter'
 
 function GetPlayerName(props) {
 

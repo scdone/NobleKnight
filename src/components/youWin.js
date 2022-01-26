@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'
-import { WithRouter } from './WithRouter'
+import WithRouter from './WithRouter'
 
 function YouWin(props) {
 
