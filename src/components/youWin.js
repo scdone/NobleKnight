@@ -101,4 +101,4 @@ function YouWin(props) {
     }
 }
 
-export default (WithRouter(YouWin))
+export default WithRouter(YouWin)

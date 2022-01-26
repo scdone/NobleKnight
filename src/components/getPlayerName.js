@@ -37,4 +37,4 @@ function GetPlayerName(props) {
     )
 }
 
-export default (WithRouter(GetPlayerName))
+export default WithRouter(GetPlayerName)

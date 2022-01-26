@@ -67,4 +67,4 @@ function PlayerHistory(props) {
     )
 }
 
-export default (WithRouter(PlayerHistory))
+export default WithRouter(PlayerHistory)

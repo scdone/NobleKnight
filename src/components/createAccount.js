@@ -85,4 +85,4 @@ function CreateAccount(props) {
     )
 }
 
-export default (WithRouter(CreateAccount))
+export default WithRouter(CreateAccount)

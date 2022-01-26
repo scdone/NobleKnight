@@ -106,4 +106,4 @@ function handleLogout() {
     }
 }
 
-export default (WithRouter(GameOver))
+export default WithRouter(GameOver)

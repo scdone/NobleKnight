@@ -85,4 +85,4 @@ else if(userChoice === secondEventChoice.choiceName){
 
 
 
-export default (WithRouter(Choices))
+export default WithRouter(Choices)
