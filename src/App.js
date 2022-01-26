@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import Welcome from './components/Welcome';
 import Login from './components/Login';
 import CreateAccount from './components/CreateAccount';
@@ -64,7 +64,6 @@ function App() {
       <header>
         <h1 className="title">Noble Knight</h1>
         </header>
-       <BrowserRouter>
         <Switch>
           <Route path="/login" render={()=><Login user={user} setUser={setUser} loading={loading} setLoading={setLoading}/>} />
           <Route path="/playerhistory" render={()=><PlayerHistory user={user} setUser={setUser} loading={loading} setLoading={setLoading}/>} />
@@ -76,7 +75,6 @@ function App() {
           <Route path="/youwin" render={()=><YouWin saveGameFront={saveGameFront} setPlayerName={setPlayerName} setScore={setScore} setIndex={setIndex} score={score} playerName={playerName} leaderboard={leaderboard} user={user} setUser={setUser} loading={loading} setLoading={setLoading} />} />
           <Route path="/" render={()=><Welcome />} />
         </Switch>
-      </BrowserRouter>
    </div>
    );
   }
