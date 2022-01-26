@@ -21,5 +21,5 @@ function Welcome() {
     )
 }
 
-export default WithRouter(Welcome);
+export default (WithRouter(Welcome));
 

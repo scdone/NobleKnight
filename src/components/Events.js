@@ -55,4 +55,4 @@ function Events(props) {
 
 }
  
-export default WithRouter(Events)
+export default (WithRouter(Events))

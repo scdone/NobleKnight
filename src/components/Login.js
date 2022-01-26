@@ -81,4 +81,4 @@ function Login(props) {
     )
 }
 
-export default WithRouter(Login)
+export default (WithRouter(Login))
