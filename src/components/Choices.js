@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import React, { useEffect } from 'react'
-import WithRouter from './WithRouter'
+import withRouter from './withRouter'
 
 function Choices(props) {
 
@@ -85,4 +85,4 @@ else if(userChoice === secondEventChoice.choiceName){
 
 
 
-export default WithRouter(Choices)
+export default withRouter(Choices)

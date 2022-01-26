@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import WithRouter from './WithRouter'
+import withRouter from './withRouter'
 
 function Events(props) {
     let navigate = useNavigate()
@@ -55,4 +55,4 @@ function Events(props) {
 
 }
  
-export default WithRouter(Events)
+export default withRouter(Events)
