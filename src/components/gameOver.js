@@ -1,7 +1,7 @@
 import React from "react";
-import { useNavigate, withRouter } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
+import { WithRouter } from './WithRouter'
 
 function GameOver(props) {
 
@@ -106,4 +106,4 @@ function handleLogout() {
     }
 }
 
-export default withRouter(GameOver)
+export default WithRouter(GameOver)

@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import { useNavigate, withRouter } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { WithRouter } from './WithRouter'
 
 function YouWin(props) {
 
@@ -100,4 +101,4 @@ function YouWin(props) {
     }
 }
 
-export default withRouter(YouWin)
+export default WithRouter(YouWin)

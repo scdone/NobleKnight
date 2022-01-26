@@ -1,7 +1,8 @@
 import React, {useEffect} from "react"
-import { Link , useNavigate, withRouter } from 'react-router-dom'
+import { Link , useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import axios from "axios"
+import { WithRouter } from './WithRouter'
 
 function Login(props) {
 
@@ -80,4 +81,4 @@ function Login(props) {
     )
 }
 
-export default withRouter(Login)
+export default WithRouter(Login)
