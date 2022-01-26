@@ -1,17 +1,17 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useHistory, withRouter } from 'react-router-dom'
 import axios from 'axios'
-import withRouter from './withRouter'
+
 
 function GetPlayerName(props) {
 
-    let navigate = useNavigate()
+    let history = useHistory()
 
     function getEventsFront() {
         axios.get('/allEvents')
             .then((res) => {
                 props.setEvents(res.data)
-                navigate('/events')
+                history.push('/events')
             })
     }
 

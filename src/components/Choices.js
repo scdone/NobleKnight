@@ -1,10 +1,10 @@
-import { useNavigate } from 'react-router-dom'
+import { useHistory, withRouter } from 'react-router-dom'
 import React, { useEffect } from 'react'
-import withRouter from './withRouter'
+
 
 function Choices(props) {
 
-let navigate = useNavigate()
+let history = useHistory()
 let userChoice = props.userInput
 let firstEventChoice = props.events[props.index].choices.firstChoice
 let secondEventChoice = props.events[props.index].choices.secondChoice
@@ -16,16 +16,16 @@ const choiceMachine = (e) => {
 
             if(firstEventChoice.youWin === true){
                 props.setUserInput('')
-                navigate('/youwin')
+                history.push('/youwin')
             }
             else if(firstEventChoice.gameOver === true){
                 props.setIndex(props.index + 1)
                 props.setUserInput('')
-                navigate('/gameover')}
+                history.push('/gameover')}
             else if (firstEventChoice.gameOver === false) {
                 props.setIndex(props.index + 1)
                 props.setUserInput('')
-                navigate('/events')
+                history.push('/events')
             }
         } else {
             props.setIndex(props.index + 1)
@@ -33,10 +33,10 @@ const choiceMachine = (e) => {
 
             if(secondEventChoice.gameOver === true){
                 props.setUserInput('')
-                navigate('/gameover')}
+                history.push('/gameover')}
             else if (secondEventChoice.gameOver === false) {
                 props.setUserInput('')
-                navigate('/events')
+                history.push('/events')
             }
         }  
     }

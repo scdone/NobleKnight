@@ -1,14 +1,14 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import withRouter from './withRouter'
+import { useHistory, withRouter } from 'react-router-dom'
+
 
 
 function Welcome() {
 
-    let navigate = useNavigate()
+    let history = useHistory()
 
     const handleClickEnterGame =  () => {
-        navigate('login')
+        history.push('/login')
     }
 
     return (

@@ -1,7 +1,7 @@
-import { useNavigate } from 'react-router-dom'
-import React, { useEffect, useState } from 'react'
+import { useHistory } from 'react-router-dom'
+import React, { useEffect, useState, withRouter } from 'react'
 import axios from 'axios'
-import withRouter from './withRouter'
+
 
 
 function PlayerHistory(props) {
@@ -9,7 +9,7 @@ function PlayerHistory(props) {
     const [loading, setLoading] = useState(true)
     const [previousGames, setPreviousGames] = useState(null)
 
-    let navigate = useNavigate()
+    let history = useHistory()
 
     function getPlayerHistoryFront() {
         if (!previousGames) {
@@ -29,7 +29,7 @@ function PlayerHistory(props) {
 
 
     const handleNewGameButton = () => {
-        navigate("/getname")
+        history.push("/getname")
     }
 
     function handleLogout() {
@@ -39,7 +39,7 @@ function PlayerHistory(props) {
               props.setUser(null)
               props.setLoading(false)
             })
-        navigate('/')
+        history.push('/')
       }
 
       console.log(props.user)

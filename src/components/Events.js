@@ -1,9 +1,9 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import withRouter from './withRouter'
+import { useHistory, withRouter } from 'react-router-dom'
+
 
 function Events(props) {
-    let navigate = useNavigate()
+    let history = useHistory()
     let {userInput: userChoice} = props
     let firstEventChoice = props.events[props.index].choices.firstChoice
     let secondEventChoice = props.events[props.index].choices.secondChoice
@@ -21,7 +21,7 @@ function Events(props) {
             alert('That is not a valid choice!')
         }
         else {
-        navigate('/choices')}
+        history.push('/choices')}
 
     }
 
@@ -50,7 +50,7 @@ function Events(props) {
             </div>
         )}
     else if(props.index === 10) {
-        navigate('/youwin')
+        history.push('/youwin')
     }
 
 }

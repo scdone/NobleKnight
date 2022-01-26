@@ -1,12 +1,12 @@
 import React, {useEffect} from "react"
-import { Link , useNavigate } from 'react-router-dom'
+import { Link , useHistory, withRouter } from 'react-router-dom'
 import { useState } from 'react'
 import axios from "axios"
-import withRouter from './withRouter'
+
 
 function Login(props) {
 
-    let navigate = useNavigate()
+    let history = useHistory()
     const [username, setUsername] = useState(null)
     const [password, setPassword] = useState(null)
 
@@ -21,7 +21,7 @@ function Login(props) {
 
     const handleClickAsGuest = () => {
         props.setUser(null)
-        navigate('/getname')
+        history.push('/getname')
     }
 
     const handleUserLogin = (e) => {
@@ -48,7 +48,7 @@ function Login(props) {
 
     useEffect(() => {
         if (props.user) {
-            navigate('/playerhistory')
+            history.push('/playerhistory')
         }
     }, [props.user])
 

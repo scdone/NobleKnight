@@ -1,25 +1,25 @@
 import React from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'
-import withRouter from './withRouter'
+import { useHistory, withRouter } from 'react-router-dom'
+
 
 function YouWin(props) {
 
-    let navigate = useNavigate();
+    let history = useHistory();
 
     const handlePlayAgain = () => {
         props.saveGameFront()
         props.setPlayerName('')
         props.setIndex(0)
         props.setScore(0)
-        navigate('/playerhistory')
+        history.push('/playerhistory')
     }
   
     const handleClickQuit = () => {
         props.setPlayerName('')
         props.setIndex(0)
         props.setScore(0)
-        navigate('/')
+        history.push('/')
     }
 
     function handleLogout() {
@@ -30,7 +30,7 @@ function YouWin(props) {
               props.setUser(null)
               props.setLoading(false)
             })
-        navigate('/')
+        history.push('/')
       }
 
     if(props.user){

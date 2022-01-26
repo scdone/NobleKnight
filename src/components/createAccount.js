@@ -1,11 +1,11 @@
-import { useNavigate } from 'react-router-dom'
+import { useHistory, withRouter } from 'react-router-dom'
 import axios from 'axios'
 import React, { useState } from 'react'
-import withRouter from './withRouter'
+
 
 
 function CreateAccount(props) {
-    let navigate = useNavigate()
+    let history = useHistory()
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [confirm, setConfirm] = useState('')
@@ -40,7 +40,7 @@ function CreateAccount(props) {
                     props.setUser(res.data)
                     props.setLoading(false)
                 })
-            navigate('/playerhistory')
+            history.push('/playerhistory')
             }
     }
 
