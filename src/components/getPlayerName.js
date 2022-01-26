@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, withRouter } from 'react-router-dom'
 import axios from 'axios'
 
 function GetPlayerName(props) {
@@ -36,4 +36,4 @@ function GetPlayerName(props) {
     )
 }
 
-export default GetPlayerName
+export default withRouter(GetPlayerName)

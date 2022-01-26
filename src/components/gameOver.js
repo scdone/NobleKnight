@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, withRouter } from "react-router-dom";
 import axios from "axios";
 
 
@@ -106,4 +106,4 @@ function handleLogout() {
     }
 }
 
-export default GameOver
+export default withRouter(GameOver)

@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, withRouter } from 'react'
 import axios from 'axios'
 
 
@@ -67,4 +67,4 @@ function PlayerHistory(props) {
     )
 }
 
-export default PlayerHistory
+export default withRouter(PlayerHistory)

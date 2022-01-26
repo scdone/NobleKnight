@@ -1,5 +1,5 @@
 import React, {useEffect} from "react"
-import { Link , useNavigate } from 'react-router-dom'
+import { Link , useNavigate, withRouter } from 'react-router-dom'
 import { useState } from 'react'
 import axios from "axios"
 
@@ -80,4 +80,4 @@ function Login(props) {
     )
 }
 
-export default Login
+export default withRouter(Login)

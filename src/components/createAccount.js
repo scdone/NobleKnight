@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, withRouter } from 'react-router-dom'
 import axios from 'axios'
 import React, { useState } from 'react'
 
@@ -84,4 +84,4 @@ function CreateAccount(props) {
     )
 }
 
-export default CreateAccount
+export default withRouter(CreateAccount)

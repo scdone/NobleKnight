@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, withRouter } from 'react-router-dom'
 
 
 function Welcome() {
@@ -20,5 +20,5 @@ function Welcome() {
     )
 }
 
-export default Welcome
+export default withRouter(Welcome)
 

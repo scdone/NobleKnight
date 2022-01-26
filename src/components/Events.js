@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, withRouter } from 'react-router-dom'
 
 function Events(props) {
     let navigate = useNavigate()
@@ -54,4 +54,4 @@ function Events(props) {
 
 }
  
-export default Events
+export default withRouter(Events)
