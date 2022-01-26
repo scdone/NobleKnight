@@ -7,11 +7,19 @@ function YouWin(props) {
 
     let history = useHistory();
 
+    function getEventsFront() {
+        axios.get('/allEvents')
+            .then((res) => {
+                props.setEvents(res.data)
+            })
+    }
+
     const handlePlayAgain = () => {
         props.saveGameFront()
         props.setPlayerName('')
         props.setIndex(0)
         props.setScore(0)
+        getEventsFront()
         history.push('/playerhistory')
     }
   
@@ -19,6 +27,7 @@ function YouWin(props) {
         props.setPlayerName('')
         props.setIndex(0)
         props.setScore(0)
+        getEventsFront()
         history.push('/')
     }
 
