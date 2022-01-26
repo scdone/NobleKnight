@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Welcome from './components/Welcome';
 import Login from './components/Login';
 import CreateAccount from './components/CreateAccount';
@@ -65,17 +65,17 @@ function App() {
         <h1 className="title">Noble Knight</h1>
         </header>
        <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Welcome />} />
-          <Route path="/login" element={<Login user={user} setUser={setUser} loading={loading} setLoading={setLoading}/>} />
-          <Route path="/playerhistory" element={<PlayerHistory user={user} setUser={setUser} loading={loading} setLoading={setLoading}/>} />
-          <Route path="/createaccount" element={<CreateAccount setUser={setUser} loading={loading} setLoading={setLoading} />} />
-          <Route path="/getname" element={<GetPlayerName setEvents={setEvents} playerName={playerName} setPlayerName={setPlayerName}  />} />
-          <Route path="/events" element={<Events events={events} index={index}setIndex={setIndex} userInput={userInput} setUserInput={setUserInput} playerName={playerName}/>} />
-          <Route path="/choices" element={<Choices events={events} index={index} setIndex={setIndex} score={score} setScore={setScore} userInput={userInput} setUserInput={setUserInput} />} />
-          <Route path="/gameover" element={<GameOver saveGameFront={saveGameFront} setPlayerName={setPlayerName} setScore={setScore} setIndex={setIndex} score={score} leaderboard={leaderboard} user={user} setUser={setUser} loading={loading} setLoading={setLoading}/>} />
-          <Route path="/youwin" element={<YouWin saveGameFront={saveGameFront} setPlayerName={setPlayerName} setScore={setScore} setIndex={setIndex} score={score} playerName={playerName} leaderboard={leaderboard} user={user} setUser={setUser} loading={loading} setLoading={setLoading} />} />
-        </Routes>
+        <Switch>
+          <Route path="/" render={()=><Welcome />} />
+          <Route path="/login" render={()=><Login user={user} setUser={setUser} loading={loading} setLoading={setLoading}/>} />
+          <Route path="/playerhistory" render={()=><PlayerHistory user={user} setUser={setUser} loading={loading} setLoading={setLoading}/>} />
+          <Route path="/createaccount" render={()=><CreateAccount setUser={setUser} loading={loading} setLoading={setLoading} />} />
+          <Route path="/getname" render={()=><GetPlayerName setEvents={setEvents} playerName={playerName} setPlayerName={setPlayerName}  />} />
+          <Route path="/events" render={()=><Events events={events} index={index}setIndex={setIndex} userInput={userInput} setUserInput={setUserInput} playerName={playerName}/>} />
+          <Route path="/choices" render={()=><Choices events={events} index={index} setIndex={setIndex} score={score} setScore={setScore} userInput={userInput} setUserInput={setUserInput} />} />
+          <Route path="/gameover" render={()=><GameOver saveGameFront={saveGameFront} setPlayerName={setPlayerName} setScore={setScore} setIndex={setIndex} score={score} leaderboard={leaderboard} user={user} setUser={setUser} loading={loading} setLoading={setLoading}/>} />
+          <Route path="/youwin" render={()=><YouWin saveGameFront={saveGameFront} setPlayerName={setPlayerName} setScore={setScore} setIndex={setIndex} score={score} playerName={playerName} leaderboard={leaderboard} user={user} setUser={setUser} loading={loading} setLoading={setLoading} />} />
+        </Switch>
       </BrowserRouter>
    </div>
    );
