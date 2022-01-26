@@ -1,5 +1,5 @@
 import './App.css';
-import { Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Welcome from './components/Welcome';
 import Login from './components/Login';
 import CreateAccount from './components/CreateAccount';
@@ -64,7 +64,7 @@ function App() {
       <header>
         <h1 className="title">Noble Knight</h1>
         </header>
-       <Router>
+       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Welcome />} />
           <Route path="/login" element={<Login user={user} setUser={setUser} loading={loading} setLoading={setLoading}/>} />
@@ -76,7 +76,7 @@ function App() {
           <Route path="/gameover" element={<GameOver saveGameFront={saveGameFront} setPlayerName={setPlayerName} setScore={setScore} setIndex={setIndex} score={score} leaderboard={leaderboard} user={user} setUser={setUser} loading={loading} setLoading={setLoading}/>} />
           <Route path="/youwin" element={<YouWin saveGameFront={saveGameFront} setPlayerName={setPlayerName} setScore={setScore} setIndex={setIndex} score={score} playerName={playerName} leaderboard={leaderboard} user={user} setUser={setUser} loading={loading} setLoading={setLoading} />} />
         </Routes>
-      </Router>
+      </BrowserRouter>
    </div>
    );
   }
